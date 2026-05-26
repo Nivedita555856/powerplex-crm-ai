@@ -1,0 +1,11 @@
+appliance_id,category,brand,model,description,price,type_code,warranty_years
+APPL001,Air Conditioner,CoolBreeze,CB-1.5T,1.5 Ton Split AC,32000,AC,2
+APPL002,Air Conditioner,CoolBreeze,CB-2T,2 Ton Split AC,42000,AC,1
+APPL003,Refrigerator,FrostKing,FK-260L,260L Frost-Free,22000,Fridge,1
+APPL004,Refrigerator,FrostKing,FK-340L,340L Frost-Free,31000,Fridge,2
+APPL005,Washing Machine,WashPro,WP-6.5F,6.5kg Front Load,28000,WM,1
+APPL006,Washing Machine,WashPro,WP-7.5T,7.5kg Top Load,18000,WM,1
+APPL007,Microwave,MicroChef,MC-20S,20L Solo Microwave,6000,MW,1
+APPL008,Microwave,MicroChef,MC-28C,28L Convection,11000,MW,1
+APPL009,TV,VisionX,VX-43S,"43"" 4K Smart TV",35000,TV,1
+APPL010,TV,VisionX,VX-55S,"55"" 4K QLED TV",55000,TV,2

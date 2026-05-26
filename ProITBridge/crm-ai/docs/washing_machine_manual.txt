@@ -1,0 +1,102 @@
+=============================================================
+WASHPRO WASHING MACHINE — OWNER'S MANUAL
+Models: WP-6.5F (Front Load), WP-7.5T / WP-8T (Top Load)
+=============================================================
+
+SECTION 1: PRODUCT OVERVIEW
+-----------------------------
+WashPro Washing Machines deliver efficient fabric care with intelligent wash programs.
+Capacity: 6.5kg (Front Load), 7.5kg / 8kg (Top Load)
+Energy: 5-Star rated
+Motor: Brushless Inverter Motor (10-year warranty)
+Spin Speed: Up to 1400 RPM (Front Load), 740 RPM (Top Load)
+
+SECTION 2: INSTALLATION
+-------------------------
+- Place on a firm, level surface. Use leveling feet to eliminate vibration.
+- Water inlet pressure: 0.3–1.0 MPa
+- Drain hose height: 60–90 cm from floor (top load); wall drain recommended
+- Electrical: Dedicated 15A earthed socket; do NOT use extension cord
+- Keep at least 5 cm from walls and other appliances
+- Remove transit bolts (3–4 bolts at back) before first use — CRITICAL!
+
+SECTION 3: DETERGENT GUIDE
+-----------------------------
+Front Load (WP-6.5F):
+  - Use ONLY HE (High Efficiency) low-foam detergent
+  - Drawer: Compartment I = Pre-wash, II = Main wash, III = Fabric softener
+  - Liquid: Use liquid detergent compartment (II slot)
+  - Recommended dose: 40–60ml for normal load, 70–80ml for heavily soiled
+
+Top Load (WP-7.5T / WP-8T):
+  - Standard or HE detergent (both work)
+  - Add detergent before clothes, or use dispenser drawer
+  - Avoid overloading detergent — excess foam reduces wash quality
+
+SECTION 4: WASH PROGRAMS
+--------------------------
+Cotton / Normal: Full wash for cotton garments (60°C capable)
+Synthetic / Delicate: Gentle wash for synthetic, blends
+Quick Wash (15 min): Lightly soiled clothes, small loads
+Woollen: Gentle tumble, cold water, low spin
+Heavy Duty: Work clothes, jeans, heavily soiled
+Baby Care: Hot wash + extra rinse for baby clothes
+Dark Care: Cold wash to preserve dark fabric colors
+Soak + Wash: 20-minute pre-soak for tough stains
+Drum Clean: Self-cleaning cycle (run empty, no detergent, monthly)
+Rinse + Spin: Rinse and spin only (add rinse cycle manually)
+Spin Only: Spin to remove excess water after soaking
+
+SECTION 5: TIPS FOR BEST RESULTS
+-----------------------------------
+- Sort clothes: whites, lights, darks, delicates separately
+- Check care labels for maximum wash temperature
+- Do NOT overload: drum should be 3/4 full maximum
+- Zip up zippers; turn dark clothes inside out
+- Pre-treat tough stains before washing
+- Use fabric softener in final rinse for softness
+- Do NOT wash heavily soiled items with lightly soiled (cross-contamination)
+- Check pockets before loading (coins can damage drum)
+
+SECTION 6: SPIN SPEED GUIDE
+------------------------------
+400 RPM: Delicates, silk, lace
+600 RPM: Woollens, synthetics
+800–1000 RPM: Casuals, T-shirts
+1200–1400 RPM: Cotton, towels, jeans
+
+SECTION 7: ERROR CODES
+------------------------
+E1 / F1: Water inlet error → Check tap is open; check inlet hose kink
+E2 / F2: Drainage error → Check drain hose not kinked; check filter
+E3 / F3: Door lock error → Ensure door is firmly closed; restart
+E4 / F4: Overflow protection → Check water inlet valve
+E5 / F5: Motor error → Check load distribution; service required
+E6 / F6: Heating element error → Service required
+E7 / F7: Imbalance detected → Redistribute clothes evenly
+UNB: Imbalance during spin → Open and redistribute load
+
+SECTION 8: MAINTENANCE
+------------------------
+Weekly:
+  - Wipe door seal/gasket (front load: check for lint/debris in folds)
+  - Leave door ajar after wash to prevent mold
+
+Monthly:
+  - Run Drum Clean cycle (empty drum, no detergent, 90°C)
+  - Clean lint filter (top load: inside drum near top)
+  - Clean pump filter (front load: lower front panel, small door)
+  - Wipe detergent drawer with warm water
+
+Every 6 months:
+  - Clean inlet filter mesh (unscrew hose from tap end)
+  - Check drain hose for blockage
+  - Professional service recommended
+
+SECTION 9: WARRANTY
+---------------------
+Comprehensive: 2 years from purchase
+Motor: 10 years from purchase
+Drum: 5 years (no rust/hole guarantee)
+Exclusions: Physical damage, improper installation, pest damage, overloading damage
+Service visits within warranty: Free of charge for covered defects

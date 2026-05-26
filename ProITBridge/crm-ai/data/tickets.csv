@@ -1,0 +1,42 @@
+ticket_id,customer_id,warranty_id,appliance_id,issue,status,priority,created_date,resolved_date,technician_id,resolution_notes,satisfaction_score
+TKT0001,CUST008,WRN028,APPL002,Water dripping from indoor unit,Open,Critical,2026-01-18,,,,
+TKT0002,CUST005,WRN007,APPL003,Unusual noise,Closed,Low,2026-04-10,2026-05-10,TECH04,Issue resolved: unusual noise fixed.,4
+TKT0003,CUST018,WRN030,APPL001,Strange noise from outdoor unit,In Progress,Critical,2025-11-25,,TECH05,,
+TKT0004,CUST019,WRN005,APPL002,Water dripping from indoor unit,In Progress,Low,2026-05-08,,TECH05,,
+TKT0005,CUST004,WRN024,APPL001,Remote not working,Open,Critical,2025-12-24,,,,
+TKT0006,CUST011,WRN017,APPL002,AC not turning on,Open,Low,2026-01-12,,,,
+TKT0007,CUST008,WRN028,APPL002,Water dripping from indoor unit,Open,Medium,2026-05-05,,,,
+TKT0008,CUST003,WRN013,APPL006,Not spinning,Closed,Low,2025-12-28,2026-05-03,TECH02,Issue resolved: not spinning fixed.,3
+TKT0009,CUST018,WRN014,APPL004,Temperature fluctuating,In Progress,Medium,2026-03-03,,TECH03,,
+TKT0010,CUST014,WRN022,APPL006,Error code E2,Open,Medium,2026-02-10,,,,
+TKT0011,CUST014,WRN022,APPL006,Error code E2,In Progress,Critical,2026-05-04,,TECH01,,
+TKT0012,CUST008,WRN020,APPL008,Display issue,Closed,Medium,2026-05-04,2026-05-06,TECH05,Issue resolved: display issue fixed.,4
+TKT0013,CUST019,WRN005,APPL002,Remote not working,Closed,High,2026-03-21,2026-05-17,TECH03,Issue resolved: remote not working fixed.,4
+TKT0014,CUST014,WRN027,APPL003,Temperature fluctuating,Resolved,Low,2025-12-17,2026-05-01,TECH05,Issue resolved: temperature fluctuating fixed.,5
+TKT0015,CUST007,WRN010,APPL005,Not spinning,Closed,Low,2026-04-18,2026-04-24,TECH03,Issue resolved: not spinning fixed.,3
+TKT0016,CUST004,WRN024,APPL001,AC not turning on,Open,Medium,2026-03-11,,,,
+TKT0017,CUST015,WRN023,APPL001,Remote not working,Open,High,2025-12-11,,,,
+TKT0018,CUST011,WRN017,APPL002,Strange noise from outdoor unit,In Progress,Critical,2026-05-09,,TECH01,,
+TKT0019,CUST014,WRN027,APPL003,Door seal damaged,Open,Medium,2026-02-26,,,,
+TKT0020,CUST007,WRN021,APPL002,Remote not working,Open,Critical,2026-01-29,,,,
+TKT0021,CUST009,WRN018,APPL008,Not heating,Open,Medium,2025-11-27,,,,
+TKT0022,CUST009,WRN018,APPL008,Not heating,Resolved,Medium,2025-12-24,2026-05-09,TECH05,Issue resolved: not heating fixed.,3
+TKT0023,CUST020,WRN002,APPL006,Error code E2,In Progress,Medium,2026-05-12,,TECH03,,
+TKT0024,CUST014,WRN022,APPL006,Water leaking,Resolved,Critical,2026-02-21,2026-05-03,TECH05,Issue resolved: water leaking fixed.,5
+TKT0025,CUST019,WRN005,APPL002,Water dripping from indoor unit,Closed,Low,2026-04-07,2026-05-17,TECH04,Issue resolved: water dripping from indoor unit fixed.,5
+TKT0026,CUST018,WRN030,APPL001,Remote not working,Resolved,High,2026-02-06,2026-05-17,TECH02,Issue resolved: remote not working fixed.,5
+TKT0027,CUST010,WRN004,APPL004,Unusual noise,Closed,Medium,2026-01-22,2026-04-26,TECH02,Issue resolved: unusual noise fixed.,4
+TKT0028,CUST015,WRN012,APPL002,Remote not working,Resolved,Low,2026-03-25,2026-05-01,TECH02,Issue resolved: remote not working fixed.,3
+TKT0029,CUST003,WRN013,APPL006,Error code E2,In Progress,High,2026-05-05,,TECH03,,
+TKT0030,CUST007,WRN021,APPL002,AC not turning on,In Progress,Low,2026-01-05,,TECH03,,
+TKT0031,CUST010,WRN004,APPL004,Door seal damaged,Open,Low,2026-03-16,,,,
+TKT0032,CUST010,WRN004,APPL004,Temperature fluctuating,In Progress,Low,2026-03-03,,TECH04,,
+TKT0033,CUST003,WRN013,APPL006,Clothes not clean,Open,Critical,2026-05-11,,,,
+TKT0034,CUST018,WRN001,APPL009,Screen flickering,Closed,High,2026-01-05,2026-05-09,TECH02,Issue resolved: screen flickering fixed.,3
+TKT0035,CUST014,WRN022,APPL006,Error code E2,Resolved,High,2025-12-04,2026-05-06,TECH01,Issue resolved: error code e2 fixed.,4
+TKT0036,CUST014,WRN022,APPL006,Drum not rotating,In Progress,Medium,2025-11-25,,TECH03,,
+TKT0037,CUST005,WRN007,APPL003,Unusual noise,Resolved,High,2026-02-14,2026-05-10,TECH02,Issue resolved: unusual noise fixed.,5
+TKT0038,CUST014,WRN027,APPL003,Not cooling,In Progress,High,2026-03-30,,TECH04,,
+TKT0039,CUST001,WRN015,APPL002,Strange noise from outdoor unit,Open,Critical,2026-03-29,,,,
+TKT0040,CUST007,WRN026,APPL009,Sound issue,Resolved,High,2026-03-11,2026-05-20,TECH05,Issue resolved: sound issue fixed.,3
+TKT0041,CUST002,WRN002,APPL001,Refrigerator not cooling — food spoiling,Open,High,2026-05-20,,,,

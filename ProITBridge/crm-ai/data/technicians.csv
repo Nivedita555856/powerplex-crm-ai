@@ -1,0 +1,9 @@
+technician_id,name,phone,specialization,city,rating,active_tickets,experience_years,availability_status
+TK-1,Ajit Verma,+91-9810-111-2233,AC Repair,Delhi - Sector 1,4.8,2,8,Available
+TK-2,Meera Nair,+91-9820-222-3344,Refrigerator,Delhi - Sector 3,4.6,3,6,Available
+TK-3,Rajesh Kumar,+91-9830-333-4455,Microwave,Delhi - Sector 5,4.5,1,5,Available
+TK-4,Priya Singh,+91-9840-444-5566,Washing Machine,Delhi - Sector 7,4.7,2,7,Available
+TK-5,Sunil Rao,+91-9850-555-6677,General Appliances,Delhi - Sector 9,4.4,1,4,Available
+TK-6,Kiran Sharma,+91-9860-666-7788,AC Repair,Delhi - Sector 11,4.9,0,10,Available
+TK-7,Deepa Pillai,+91-9870-777-8899,Refrigerator,Delhi - Sector 13,4.3,2,5,Available
+TK-8,Manoj Tiwari,+91-9880-888-9900,General Appliances,Delhi - Sector 15,4.6,1,6,Available

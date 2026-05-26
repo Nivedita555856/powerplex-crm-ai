@@ -1,0 +1,114 @@
+=============================================================
+MICROCHEF MICROWAVE OVEN — OWNER'S MANUAL
+Models: MC-20S (Solo), MC-28C (Convection), MC-32G (Grill+Convection)
+=============================================================
+
+SECTION 1: PRODUCT OVERVIEW
+-----------------------------
+MicroChef Microwave Ovens combine microwave, grill, and convection for versatile cooking.
+Capacity: 20L (Solo), 28L (Convection), 32L (Grill + Convection)
+Power: 700W / 900W / 1000W microwave; 1200W grill; 2200W convection
+Frequency: 2450 MHz
+Turntable: 25.5 cm (Solo/Conv), 31.5 cm (Grill+Conv)
+
+SECTION 2: COOKWARE GUIDE
+---------------------------
+SAFE for microwave:
+  - Glass, Ceramic, Microwave-safe plastic (labeled MW safe)
+  - Paper towel, parchment paper (for covering)
+  - Borosilicate glass (Pyrex)
+
+NOT SAFE for microwave:
+  - Metals, foil, metallic crockery
+  - Sealed containers (pressure buildup)
+  - Styrofoam (unless specifically marked microwave-safe)
+
+Safe for GRILL mode (MC-28C, MC-32G):
+  - Metal rack provided with oven
+  - Grill-safe glass, ceramic
+
+Safe for CONVECTION mode:
+  - Metal baking trays, aluminum foil dishes
+  - All oven-safe cookware
+
+SECTION 3: COOKING MODES
+--------------------------
+SOLO (MC-20S): Microwave only — reheating, defrosting, basic cooking
+MICROWAVE (all models): Power levels 10%–100%. 
+  - 100%: Boiling, reheating liquids
+  - 70%: Cooking fish, vegetables
+  - 50%: Cooking meat, casseroles
+  - 30%: Defrosting
+  - 10%: Keeping warm
+
+GRILL (MC-28C, MC-32G): Browning and crisping. Use metal rack.
+CONVECTION (MC-28C, MC-32G): Preheat to 180°C–200°C. Baking, roasting.
+COMBINATION modes:
+  - Micro + Grill: Cook through + brown simultaneously
+  - Micro + Convection: Faster baking
+
+SECTION 4: AUTO PROGRAMS (pre-set)
+-------------------------------------
+A1: Popcorn (standard bag)
+A2: Pizza (reheat)
+A3: Pasta
+A4: Rice
+A5: Chicken
+A6: Fish
+A7: Vegetables
+A8: Soup
+A9: Milk (warm, 250ml)
+
+SECTION 5: DEFROST GUIDE
+--------------------------
+By Weight: Enter weight → auto calculates time
+By Time: Enter time at 30% power
+After defrosting: Rest food 5 minutes before cooking
+Do NOT defrost whole large birds (uneven defrosting risk)
+Tips:
+  - Place frozen food on microwave-safe plate
+  - Flip/rearrange halfway through defrost cycle
+  - Cook immediately after defrosting
+
+SECTION 6: CLEANING GUIDE
+----------------------------
+Daily / After each use:
+  - Wipe interior walls with damp cloth while warm (easier to clean)
+  - Clean turntable plate and ring: remove and wash with soap & water
+
+Weekly:
+  - Deep clean interior: warm water + 1 tsp baking soda; microwave 3 min; wipe down
+  - Clean door seals with damp cloth (do NOT use abrasive scrubbers)
+  - Wipe exterior with damp cloth
+
+Important:
+  - Never use metal scrubbers inside
+  - Do NOT spray cleaners directly inside
+  - Keep the air vents on sides and back clear of obstruction
+
+SECTION 7: ERROR CODES
+------------------------
+E-1: Temperature sensor error → Power off, cool 15 min, restart; service if persists
+E-2: Humidity sensor error → Service required
+E-3: Door sensor error → Check door is fully closed; service if persists
+E-4: Magnetron overheating → Allow 15 min cool down; check ventilation space
+E-5: Turntable motor error → Check turntable is seated properly on ring
+E-6: Fan motor error → Service required
+H-97: Magnetron fault → Service required (do NOT attempt to repair yourself — radiation hazard)
+
+SECTION 8: SAFETY WARNINGS
+-----------------------------
+⚠ Never run microwave when empty — can damage magnetron
+⚠ Never use sealed containers — pressure buildup explosion risk
+⚠ Never heat breast milk in microwave — uneven heating burns baby
+⚠ Never deep fry in microwave
+⚠ Eggs in shell MUST be pierced before microwaving
+⚠ If door seal is damaged, stop using and call service immediately
+⚠ Do NOT attempt to repair magnetron — radiation hazard
+
+SECTION 9: WARRANTY
+---------------------
+Comprehensive: 1 year from purchase
+Magnetron: 3 years from purchase
+Exclusions: Damaged turntable (considered consumable), physical damage, misuse
+Service visits: In-home service available; carry-in service for some repairs

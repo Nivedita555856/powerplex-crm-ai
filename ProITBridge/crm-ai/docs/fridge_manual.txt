@@ -1,0 +1,107 @@
+=============================================================
+FROSTKING REFRIGERATOR — OWNER'S MANUAL
+Models: FK-260L, FK-340L, FK-450L (Frost-Free Series)
+=============================================================
+
+SECTION 1: PRODUCT OVERVIEW
+-----------------------------
+FrostKing Frost-Free Refrigerators feature multi-airflow technology for uniform cooling.
+Capacity: 260L, 340L, 450L
+Energy Rating: 3-Star / 5-Star BEE rated
+Compressor: Digital Inverter with 10-year warranty
+Cooling Type: Frost-Free (No manual defrosting required)
+Refrigerant: R-600a (eco-friendly)
+
+SECTION 2: INSTALLATION
+-------------------------
+- Allow 10 cm clearance on sides and 15 cm at the back
+- Place on level floor; adjust leveling feet if needed
+- Keep away from direct sunlight, heat sources, and gas stoves
+- After transport: wait 4 hours before switching on (compressor oil settles)
+- Ambient temperature range: 10°C to 43°C (SN-T class)
+
+SECTION 3: TEMPERATURE GUIDE
+------------------------------
+Freezer: -18°C (recommended for long-term storage)
+  - Ideal for: Ice cream, meat, fish, frozen vegetables
+Refrigerator: 3°C–5°C (recommended)
+  - Ideal for: Dairy, cooked food, beverages, fruits/vegetables
+
+Temperature Zones:
+- Top shelf: 3°C–4°C → Dairy, drinks, leftovers
+- Middle shelf: 4°C–5°C → Cooked food, eggs
+- Crisper drawer: 8°C–10°C (high humidity) → Vegetables, fruits
+- Door shelves: 5°C–8°C → Condiments, juices, butter
+
+SECTION 4: CONTROLS
+----------------------
+Digital Display Panel:
+- Fridge Temp: Use +/- buttons. Range 1°C–7°C.
+- Freezer Temp: Use +/- buttons. Range -14°C to -22°C.
+- Express Freeze: Super-cools freezer for 2.5 hours before reverting to set temp.
+- Holiday Mode: Maintains 15°C in fridge (saves energy when away for weeks).
+- Child Lock: Hold "Lock" for 3 seconds to disable panel.
+- Power Cool: Rapid cooling for fresh groceries.
+
+SECTION 5: ICE MAKER (FK-450L only)
+--------------------------------------
+- Fill water reservoir or connect to water line
+- Ice production: ~100 ice cubes per day
+- Ice full sensor: stops production when bin is full
+- Clean ice bin monthly with warm water
+
+SECTION 6: STORAGE TIPS
+--------------------------
+- Do NOT overfill; leave space for air circulation
+- Store raw meat in sealed containers on the lowest shelf
+- Keep strong-smelling foods covered
+- Do NOT store hot food directly (allow to cool to room temp first)
+- Fruits and vegetables: store separately (fruits emit ethylene gas)
+- Eggs: store in main compartment (not door) for stability
+- Maximum storage: cooked food 3–4 days, raw meat 1–2 days
+
+SECTION 7: MAINTENANCE
+------------------------
+Monthly:
+  - Clean door gaskets with warm soapy water; dry thoroughly
+  - Check drain hole at back of fridge (clear any debris)
+  - Wipe interior with baking soda solution (1 tsp per litre water)
+
+Every 6 months:
+  - Clean condenser coils at the back (vacuum or brush)
+  - Check and replace water filter (if applicable)
+  - Inspect door seal for tears or gaps
+
+Annual:
+  - Professional check of refrigerant level and compressor performance
+  - Thermostat calibration
+
+SECTION 8: DEFROST (Frost-Free models are automatic)
+------------------------------------------------------
+FK-260L / FK-340L / FK-450L use automatic frost-free system.
+Defrost cycle runs every 6–8 hours for 20–30 minutes.
+During defrost: compressor stops, fans stop, small temp rise is NORMAL.
+Water drains automatically through drain hole to evaporation tray at bottom.
+
+SECTION 9: ALARM CODES
+------------------------
+DOOR OPEN: Door open >2 minutes → Close door
+HIGH TEMP: Temperature above safe level → Check door seal; call service if persists
+PC ER: PCB/sensor error → Unplug 10 min, restart; call service if persists
+dF Er: Defrost sensor error → Service required
+FN Er: Fan motor error → Service required
+
+SECTION 10: POWER FAILURE GUIDELINES
+---------------------------------------
+Up to 4 hours: Food remains safe if door is NOT opened
+4–8 hours: Check food before consuming; ice cream may soften
+Over 8 hours: Check meat and dairy carefully; discard if smell is off
+Tip: Place a thermometer inside to monitor temperature
+
+SECTION 11: WARRANTY
+----------------------
+Comprehensive: 1 year from purchase
+Compressor: 10 years from purchase
+PCB / Electronics: 1 year
+Exclusions: Dents, scratches, pest damage, power surge damage, misuse
+In-home service within warranty period for all covered repairs

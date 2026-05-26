@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- api-base: leave empty when backend serves this page (Render).
+       Set to your Render URL when deploying frontend separately (Vercel). -->
+  <meta name="api-base" content=""/>
+  <title>PowerPlex CRM</title>
+  <link rel="stylesheet" href="/static/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="topnav">
+  <div class="topnav-brand">
+    <div class="brand-icon">P</div>
+    <div class="brand-name">PowerPlex CRM <span class="brand-tagline">AI-Powered Service Management</span></div>
+  </div>
+
+  <div class="global-tabs">
+    <button class="gtab active" id="gtab-chat"        onclick="switchGlobal('chat')">Chat</button>
+    <button class="gtab"        id="gtab-tickets"     onclick="switchGlobal('tickets')">Tickets</button>
+    <button class="gtab"        id="gtab-technicians" onclick="switchGlobal('technicians')">Technicians</button>
+  </div>
+
+  <div class="topnav-right">
+    <div class="nav-status">
+      <span class="status-dot" id="statusDot"></span>
+      <span id="statusText">Connecting...</span>
+    </div>
+    <button class="nav-btn" aria-label="Refresh" onclick="refreshAll()">&#8635;</button>
+    <div class="agent-chip">Nivedita</div>
+  </div>
+</nav>
+
+<div class="app-layout">
+
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <span class="sidebar-title">Customers</span>
+      <span class="customer-count" id="custCount">-</span>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="customerSearch" placeholder="Search..." oninput="filterCustomers()" aria-label="Search customers"/>
+    </div>
+    <div class="segment-filters">
+      <button class="filter-btn active" onclick="filterBySegment('all',this)" aria-label="All segments">All</button>
+      <button class="filter-btn seg-btn-P" onclick="filterBySegment('Premium',this)" aria-label="Premium">P</button>
+      <button class="filter-btn seg-btn-S" onclick="filterBySegment('Standard',this)" aria-label="Standard">S</button>
+      <button class="filter-btn seg-btn-B" onclick="filterBySegment('Basic',this)" aria-label="Basic">B</button>
+    </div>
+    <div class="customer-list" id="customerList">
+      <div class="loading-state">Loading...</div>
+    </div>
+  </aside>
+
+  <!-- MAIN PANEL -->
+  <main class="main-panel">
+
+    <!-- CHAT VIEW -->
+    <div class="global-view active" id="gview-chat">
+      <div class="customer-header-bar" id="customerHeader">
+        <div class="ch-empty">Select a customer or ask a global question</div>
+      </div>
+      <div class="tab-nav" id="tabNav">
+        <button class="tab-btn active" onclick="switchTab('chat',this)">Chat</button>
+        <button class="tab-btn cust-tab" onclick="switchTab('details',this)">Details</button>
+        <button class="tab-btn cust-tab" onclick="switchTab('warranty',this)">Warranty</button>
+        <button class="tab-btn cust-tab" onclick="switchTab('recommend',this)">Recommend</button>
+        <button class="tab-btn cust-tab" onclick="switchTab('report',this)">Report</button>
+      </div>
+
+      <!-- Chat -->
+      <div class="tab-content active" id="tab-chat">
+        <div class="chat-messages" id="chatMessages">
+          <div class="chat-welcome">
+            <div class="welcome-label">PowerPlex Assistant</div>
+            <p class="welcome-hint">Select a customer from the sidebar to get personalised answers based on their profile, appliances, open tickets, and warranty status.</p>
+            <p class="welcome-hint" style="margin-top:6px;"><strong>You can ask:</strong> customer history · ticket status · warranty coverage · policy details · product information · email drafts · delay analysis</p>
+            <p class="welcome-hint" style="margin-top:6px;color:var(--text-muted);font-size:12px;">Examples — <em>"What is Arun Kumar's issue?"</em> &nbsp;·&nbsp; <em>"What does the warranty cover?"</em> &nbsp;·&nbsp; <em>"Who has unresolved critical tickets?"</em> &nbsp;·&nbsp; <em>"What is the return policy?"</em></p>
+          </div>
+        </div>
+        <div class="chat-input-area">
+          <div class="chat-input-row">
+            <textarea id="chatInput" placeholder="Ask anything..." rows="1"
+              onkeydown="handleChatKey(event)" oninput="autoResize(this)" aria-label="Chat input"></textarea>
+            <button class="btn-send" onclick="sendMessage()" id="sendBtn">Send</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Details -->
+      <div class="tab-content" id="tab-details">
+        <div class="details-scroll" id="customerDetails">
+          <div class="empty-state">Select a customer to view profile</div>
+        </div>
+      </div>
+
+      <!-- Warranty -->
+      <div class="tab-content" id="tab-warranty">
+        <div class="warranty-panel" id="warrantyPanel">
+          <div class="empty-state">Select a customer to view warranty records</div>
+        </div>
+      </div>
+
+      <!-- Recommend -->
+      <div class="tab-content" id="tab-recommend">
+        <div class="rec-panel">
+          <div class="rec-controls">
+            <label class="form-label">What are you looking for?</label>
+            <input type="text" id="recQuery" placeholder="e.g. energy-efficient AC, washing machine under 30K..."/>
+            <button class="btn-primary" onclick="getRecommendations()">Get Recommendations</button>
+            <div class="engine-note" id="recEngineNote"></div>
+          </div>
+          <div id="recommendResult" style="margin-top:16px"></div>
+        </div>
+      </div>
+
+      <!-- Report Issue -->
+      <div class="tab-content" id="tab-report">
+        <div class="rec-panel">
+          <div class="rec-controls">
+            <label class="form-label">Issue</label>
+            <input type="text" id="newTicketIssue" placeholder="Describe the issue..."/>
+            <label class="form-label" style="margin-top:10px">Priority</label>
+            <select id="ticketPriority" class="form-select">
+              <option value="low">Low</option>
+              <option value="medium" selected>Medium</option>
+              <option value="high">High</option>
+              <option value="critical">Critical</option>
+            </select>
+            <button class="btn-primary" style="margin-top:14px" onclick="createTicket()">Create Ticket</button>
+          </div>
+          <div id="ticketCreateResult" style="margin-top:12px"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TICKETS VIEW -->
+    <div class="global-view" id="gview-tickets">
+      <div class="view-header">
+        <h2 class="view-title">Service Tickets</h2>
+        <button class="nav-btn" aria-label="Refresh tickets" onclick="loadAllTickets()">&#8635;</button>
+      </div>
+      <p class="section-hint">All customer service requests are listed here. Tickets from customers with active email delivery appear at the top. Use the stage filter to narrow by status, or search by ticket ID or issue keyword. Click <strong>→ Route</strong> on any open ticket to find the best-matched field engineer and generate a personalised service email.</p>
+      <div class="stage-strip" id="stageStrip"></div>
+      <div class="filter-row">
+        <input type="text" class="filter-input" id="ticketSearch" placeholder="Search..." oninput="filterTickets()" aria-label="Search tickets"/>
+        <select class="form-select sm" id="ticketStageFilter" onchange="filterTickets()" aria-label="Filter by stage">
+          <option value="">All Stages</option>
+          <option>OPEN</option><option>UNDER_REVIEW</option>
+          <option>TECHNICIAN_PENDING</option><option>ASSIGNED</option>
+          <option>IN_PROGRESS</option><option>RESOLVED</option><option>CLOSED</option>
+        </select>
+        <select class="form-select sm" id="ticketPriFilter" onchange="filterTickets()" aria-label="Filter by priority">
+          <option value="">All Priorities</option>
+          <option>critical</option><option>high</option>
+          <option>medium</option><option>low</option>
+        </select>
+      </div>
+      <div id="ticketsFeed" class="cards-list"></div>
+    </div>
+
+    <!-- AUTOMATION VIEW (hidden) -->
+    <div class="global-view" id="gview-automation" style="display:none">
+      <div id="approvalQueue"></div>
+      <span id="approvalCount" style="display:none"></span>
+      <span id="pendingBadge" style="display:none"></span>
+      <div id="webhookLog" style="display:none"></div>
+      <div id="gmailResult" style="display:none"></div>
+    </div>
+
+    <!-- TECHNICIANS VIEW -->
+    <div class="global-view" id="gview-technicians">
+      <div class="view-header">
+        <h2 class="view-title">Technicians</h2>
+        <button class="nav-btn" aria-label="Refresh technicians" onclick="loadTechnicians()">&#8635;</button>
+      </div>
+      <p class="section-hint">All field engineers are listed here with their specialisation, location, and availability. To assign an engineer to an open ticket, enter the ticket ID in the <strong>Route a Ticket</strong> panel on the right — the system will match based on specialisation and rating, and generate a personalised service email for the customer.</p>
+      <div class="tech-layout">
+        <div class="tech-cards" id="techCards">
+          <div class="loading-state">Loading...</div>
+        </div>
+        <!-- Route Panel -->
+        <div class="route-panel">
+          <div class="route-panel-title">Route Ticket</div>
+          <label class="form-label" style="margin-top:14px">Ticket ID</label>
+          <input type="text" id="routeTicketId" class="form-input" placeholder="e.g. TKT0001" aria-label="Ticket ID"/>
+          <button class="btn-primary full-w" style="margin-top:10px" onclick="routeTicketFromPanel()">Route</button>
+          <div id="routeResult" style="margin-top:12px"></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- RIGHT PANEL -->
+  <aside class="right-panel">
+    <div class="widget">
+      <div class="widget-title">Overview</div>
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-value" id="statCustomers">-</div><div class="stat-label">Customers</div></div>
+        <div class="stat-card"><div class="stat-value" id="statLeads">-</div><div class="stat-label">Leads</div></div>
+        <div class="stat-card"><div class="stat-value" id="statTickets">-</div><div class="stat-label">Tickets</div></div>
+        <div class="stat-card"><div class="stat-value" id="statPending">-</div><div class="stat-label">Pending</div></div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- EMAIL MODAL -->
+<div class="modal-overlay" id="emailModal" onclick="closeModal(event)">
+  <div class="modal-box">
+    <div class="modal-head">
+      <div class="modal-title" id="modalTitle">Email Preview</div>
+      <button class="modal-close" onclick="document.getElementById('emailModal').classList.remove('open')" aria-label="Close">&times;</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-foot">
+      <button class="btn-approve" id="modalApprove">Approve &amp; Send</button>
+      <button class="btn-reject"  id="modalReject">Reject</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="/static/app.js"></script>
+</body>
+</html>

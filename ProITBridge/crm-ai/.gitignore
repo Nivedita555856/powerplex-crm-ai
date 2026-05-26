@@ -1,0 +1,30 @@
+# Secrets — never commit
+.env
+.env.*
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Packaging
+*.egg-info/
+dist/
+build/
+
+# OS / editor
+.DS_Store
+*.db
+*.sqlite
+node_modules/
+
+# Virtual envs
+.venv/
+venv/
+
+# Model cache (large binary files — downloaded at build time by prestart.py)
+.model_cache/
+
+# NOTE: data/ and docs/ are intentionally tracked in git.
+# They contain the CSV datasets and policy documents the app needs to run.

@@ -1,0 +1,136 @@
+=============================================================
+APPLIANCE INSTALLATION GUIDE — ALL PRODUCTS
+ProITBridge Appliance Company
+=============================================================
+
+SECTION 1: AC INSTALLATION
+-----------------------------
+Step 1: Site Survey
+  - Confirm wall strength for outdoor unit (min 15kg load capacity)
+  - Identify ideal indoor unit position: central wall, 7–8 ft high, away from direct sunlight
+  - Measure copper pipe route; keep under 15 meters
+
+Step 2: Indoor Unit Mounting
+  - Mark and drill wall plate holes (use provided template)
+  - Insert wall anchors; mount wall plate; level with spirit level
+  - Cut 70mm hole for pipe/cable exit at slight downward angle (for drainage)
+  - Hang indoor unit on wall plate; click into position
+
+Step 3: Outdoor Unit Placement
+  - Mount on bracket (included) or ground stand
+  - Ensure 30 cm clearance on all sides
+  - Secure anti-vibration pads under unit
+
+Step 4: Refrigerant Piping
+  - Use provided copper pipe set (pre-insulated)
+  - Flare pipe ends using flaring tool
+  - Connect to indoor and outdoor units; torque to spec (24–26 Nm for 1/4" pipe)
+  - Wrap insulation tape on all exposed pipe joints
+
+Step 5: Electrical Connection
+  - Run 4-core cable between indoor and outdoor units
+  - Connect to terminal block per wiring diagram (colors: L, N, Ground, Signal)
+  - Ensure dedicated circuit breaker is installed
+
+Step 6: Vacuum and Gas Check
+  - Technician must vacuum the line set for 30+ minutes
+  - Check for pressure drop (indicates leak)
+  - Open service valve to release refrigerant from outdoor unit
+
+Step 7: Test Run
+  - Power on; run in Cool mode for 10 minutes
+  - Check indoor air temperature drop (should be 8–12°C below room temp)
+  - Check for unusual noise or vibration
+
+SECTION 2: REFRIGERATOR INSTALLATION
+---------------------------------------
+Step 1: Unboxing
+  - Remove all packaging, foam inserts, and tape
+  - Remove transit bolts from compressor at back (labeled RED)
+  - Keep transit bolts for future transport
+
+Step 2: Positioning
+  - Allow 10 cm side clearance, 15 cm rear clearance, 5 cm top clearance
+  - Level using adjustable front feet (turn clockwise to raise)
+  - Ensure slightly back-tilted (~1 cm) so door swings closed automatically
+
+Step 3: Wait before Switching On
+  - If transported horizontally: wait 24 hours
+  - If transported upright: wait 4 hours
+  - Reason: Compressor oil must settle back
+
+Step 4: First Use
+  - Wipe interior with mild soap solution; dry completely
+  - Set temperature to mid-range (3°C fridge, -18°C freezer)
+  - Allow 4–6 hours to reach operating temperature before loading food
+
+SECTION 3: WASHING MACHINE INSTALLATION
+-----------------------------------------
+Step 1: Remove Transit Bolts
+  - Locate 3–4 transit bolts at the back (with red/yellow caps)
+  - Remove ALL bolts using provided spanner
+  - Keep bolts — required if machine needs to be moved
+  - Cover holes with provided plastic plugs
+
+Step 2: Leveling
+  - Place on firm, level floor (not carpet)
+  - Adjust leveling feet so all 4 corners are stable
+  - Check with spirit level; max 1° inclination allowed
+  - Tighten lock nuts on feet when level
+
+Step 3: Water Connections
+  - Connect inlet hose to tap (3/4" BSP fitting; hand-tighten + 1/2 turn wrench)
+  - For hot+cold models: red hose = hot, blue = cold
+  - Ensure rubber washer is seated inside coupling before connecting
+
+Step 4: Drain Setup
+  - Route drain hose to drain pipe or laundry tub
+  - Height: 60–90 cm above floor level
+  - Secure with drain hose clip (prevents siphoning)
+  - Do NOT insert hose more than 15 cm into drain pipe
+
+Step 5: First Wash
+  - Run empty Drum Clean or Cotton 60°C cycle before first use
+  - This removes any manufacturing residue
+  - Check all connections for leaks during this cycle
+
+SECTION 4: MICROWAVE INSTALLATION
+------------------------------------
+Step 1: Placement
+  - Place on flat, stable surface
+  - Allow 10 cm clearance on sides and 20 cm on top and rear (ventilation)
+  - Do NOT install inside closed cabinet without ventilation
+
+Step 2: Electrical
+  - Plug into grounded 15A socket
+  - Do NOT use extension cord or multi-socket adaptor
+
+Step 3: Setup
+  - Set clock: Press Clock → enter time → press Clock again
+  - Place turntable ring and glass turntable plate
+  - Do NOT operate without turntable
+
+SECTION 5: TV INSTALLATION
+-----------------------------
+Wall Mounting:
+  - Use VESA-compatible wall mount (VESA 200×200 for 43"; 400×400 for 55"/65")
+  - Ensure wall can bear TV weight + mount (min 3× TV weight)
+  - Mark stud locations; drill into studs for secure mounting
+  - Use provided VESA bolt size (M6 × 20mm for most models)
+  - Minimum viewing distance: 43" = 1.8m, 55" = 2.3m, 65" = 2.7m
+
+Cable Management:
+  - Use adhesive cable clips or in-wall cable conduit
+  - Keep power and HDMI cables separated to reduce interference
+
+SECTION 6: POST-INSTALLATION CHECKLIST
+-----------------------------------------
+□ All packaging and transit bolts removed
+□ Unit is level and stable
+□ Power connection is secure and earthed
+□ Water connections checked for leaks (WM, Fridge with water line)
+□ Test run completed successfully
+□ Customer demo: controls, modes, first use tips
+□ Installation paperwork filled and signed by customer
+□ Warranty registration submitted online
+□ Next scheduled service date communicated to customer

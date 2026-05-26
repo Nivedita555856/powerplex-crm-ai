@@ -1,0 +1,21 @@
+customer_id,name,email,phone,city,since,segment
+CUST001,Arun Kumar,arunchabra03@gmail.com,+91-9125-859-5506,Delhi - Sector 1,2025-08-15,Premium
+CUST002,Priya Sharma,knivedita143@gmail.com,+91-9854-204-9935,Delhi - Sector 2,2026-01-23,Basic
+CUST003,Rahul Patel,arunchabra03@gmail.com,+91-9132-130-2535,Delhi - Sector 3,2025-09-11,Premium
+CUST004,Sneha Reddy,sneha.reddy@display.com,+91-9674-303-9928,Delhi - Sector 4,2025-02-17,Premium
+CUST005,Vikram Iyer,vikram.iyer@display.com,+91-9703-384-1106,Delhi - Sector 5,2025-11-10,Basic
+CUST006,Anita Gupta,anita.gupta@display.com,+91-9811-495-2217,Delhi - Sector 6,2025-06-22,Standard
+CUST007,Arjun Nair,arjun.nair@display.com,+91-9922-586-3328,Delhi - Sector 7,2025-04-05,Premium
+CUST008,Divya Joshi,divya.joshi@display.com,+91-9033-677-4439,Delhi - Sector 8,2025-12-18,Standard
+CUST009,Nisha Kapoor,nisha.kapoor@display.com,+91-9144-768-5540,Delhi - Sector 9,2026-02-28,Basic
+CUST010,Suresh Verma,suresh.verma@display.com,+91-9255-859-6651,Delhi - Sector 10,2025-07-14,Standard
+CUST011,Pooja Das,pooja.das@display.com,+91-9366-940-7762,Delhi - Sector 11,2025-10-30,Premium
+CUST012,Nikhil Pillai,nikhil.pillai@display.com,+91-9477-031-8873,Delhi - Sector 12,2025-05-19,Basic
+CUST013,Rekha Mishra,rekha.mishra@display.com,+91-9588-122-9984,Delhi - Sector 13,2025-03-08,Standard
+CUST014,Ajay Thakur,ajay.thakur@display.com,+91-9699-213-0095,Delhi - Sector 14,2026-04-11,Premium
+CUST015,Ravi Rao,ravi.rao@display.com,+91-9700-304-1106,Delhi - Sector 15,2025-09-25,Basic
+CUST016,Kavya Menon,kavya.menon@display.com,+91-9811-395-2217,Delhi - Sector 16,2025-11-03,Standard
+CUST017,Rohit Saxena,rohit.saxena@display.com,+91-9922-486-3328,Delhi - Sector 17,2026-01-15,Premium
+CUST018,Meena Krishnan,meena.krishnan@display.com,+91-9033-577-4439,Delhi - Sector 18,2025-08-07,Basic
+CUST019,Deepak Malhotra,deepak.malhotra@display.com,+91-9144-668-5540,Delhi - Sector 19,2025-06-29,Standard
+CUST020,Sunita Yadav,sunita.yadav@display.com,+91-9255-759-6651,Delhi - Sector 20,2025-04-17,Premium

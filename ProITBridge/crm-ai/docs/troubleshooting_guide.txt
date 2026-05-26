@@ -1,0 +1,85 @@
+APPLIANCE TROUBLESHOOTING GUIDE
+================================
+
+AIR CONDITIONER
+---------------
+Problem: AC not cooling
+- Check if set temperature is lower than room temperature
+- Clean air filter (every 2 weeks): Remove front panel, wash filter with water, dry and refit
+- Check if outdoor unit fan is running
+- Ensure no objects blocking the vents
+- If still not cooling: Call service (possible low refrigerant)
+
+Problem: AC making noise
+- Rattling: Loose front panel or filter - refit properly
+- Gurgling: Normal refrigerant sound during startup
+- Loud compressor noise: Call technician - compressor may need service
+
+Problem: AC remote not working
+- Replace batteries (AA, 1.5V)
+- Point remote directly at indoor unit sensor
+- Reset remote: Remove batteries for 30 seconds, reinsert
+
+REFRIGERATOR
+------------
+Problem: Fridge not cooling
+- Check temperature setting (recommended: 3-4 for fridge, -18°C for freezer)
+- Ensure door seals are tight (test: close door on paper, if paper pulls out easily, replace seal)
+- Keep 10cm gap from walls for ventilation
+- Defrost if heavy ice buildup in freezer
+
+Problem: Fridge making noise
+- Normal sounds: Clicking (thermostat), gurgling (refrigerant), hissing (defrost cycle)
+- Abnormal: Very loud compressor, continuous clicking - call service
+
+Problem: Water leaking from fridge
+- Check drain hole at back of fridge interior - may be clogged
+- Clean drain hole with thin wire
+- Check if water dispenser tube is connected properly
+
+WASHING MACHINE
+---------------
+Problem: Washing machine not spinning
+- Check if load is unbalanced - redistribute clothes
+- Check if door is properly closed
+- Error code E4/UB: Unbalanced load - reduce load or balance
+- Drain filter may be clogged: Clean filter at bottom front panel
+
+Problem: Water leaking from washing machine
+- Check door seal for damage or debris
+- Ensure drain hose is not kinked
+- Don't use too much detergent (use HE detergent for front loaders)
+
+Problem: Washing machine vibrating excessively
+- Ensure machine is level (adjust leveling feet)
+- Remove transit bolts if newly installed
+- Don't overload the machine
+
+TELEVISION
+----------
+Problem: No picture
+- Check if power light is on - if yes, try remote power button
+- Check HDMI/cable connections
+- Factory reset: Settings > General > Reset (PIN: 0000)
+
+Problem: No sound
+- Check volume level and mute status
+- Check if audio output set to external speaker incorrectly
+- Try different content source
+
+Problem: Wi-Fi not connecting
+- Restart TV and router
+- Forget and reconnect to Wi-Fi network
+- Check if router is 2.4GHz or 5GHz compatible
+
+MICROWAVE
+---------
+Problem: Microwave not heating
+- Check power settings (should be on High/100% for most food)
+- Test with a cup of water for 1 minute - water should be hot
+- If not heating: Door switch may be faulty - call service
+
+Problem: Sparking inside microwave
+- Remove all metal objects or foil
+- Check for food debris on walls - clean with damp cloth
+- Check turntable for cracks - replace if damaged

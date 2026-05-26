@@ -1,0 +1,51 @@
+services:
+  - type: web
+    name: powerplex-crm-ai
+    env: python
+    region: singapore
+    plan: free
+    buildCommand: >
+      pip install --upgrade pip &&
+      pip install -r requirements.txt &&
+      python scripts/prestart.py
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+
+    envVars:
+      # ── LLM ───────────────────────────────────────────────────────────────
+      - key: GROQ_API_KEY
+        sync: false           # paste in Render dashboard → Environment tab
+      - key: LLM_MODEL
+        value: llama-3.3-70b-versatile
+
+      # ── Embeddings ────────────────────────────────────────────────────────
+      - key: EMBEDDING_MODEL
+        value: all-MiniLM-L6-v2
+
+      # ── Email / SMTP ──────────────────────────────────────────────────────
+      - key: SMTP_HOST
+        value: smtp.gmail.com
+      - key: SMTP_PORT
+        value: "465"
+      - key: SMTP_USER
+        sync: false           # your Gmail address
+      - key: SMTP_PASSWORD
+        sync: false           # your Gmail App Password (16-char)
+      - key: ADMIN_EMAIL
+        sync: false           # BCC address for all outbound emails
+
+      # ── Data source ────────────────────────────────────────────────────────
+      - key: DATA_SOURCE
+        value: local          # uses bundled CSV files in /data
+
+      # ── Optional: Pinecone (leave blank to skip) ──────────────────────────
+      - key: PINECONE_API_KEY
+        value: ""
+      - key: PINECONE_INDEX
+        value: ""
+
+      # ── Optional: Supabase (leave blank to skip) ──────────────────────────
+      - key: SUPABASE_URL
+        value: ""
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        value: ""

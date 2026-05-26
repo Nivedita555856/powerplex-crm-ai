@@ -1,0 +1,21 @@
+email_id,customer_id,ticket_id,direction,subject,body_snippet,sent_date,status
+EMAIL001,CUST015,,Inbound,Exclusive offer on extended warranty,"Dear Nikhil, we are writing regarding your recent service request.",2026-03-30,Read
+EMAIL002,CUST003,TKT0035,Outbound,Annual maintenance reminder,"Dear Rahul, we are writing regarding your recent service request.",2026-04-24,Sent
+EMAIL003,CUST002,TKT0016,Outbound,Your service request has been received,"Dear Priya, we are writing regarding your recent service request.",2026-03-04,Delivered
+EMAIL004,CUST008,,Outbound,New product available — upgrade offer,"Dear Divya, we are writing regarding your recent service request.",2026-04-25,Replied
+EMAIL005,CUST009,TKT0011,Outbound,Your appliance warranty is expiring soon,"Dear Suresh, we are writing regarding your recent service request.",2026-04-13,Sent
+EMAIL006,CUST019,,Inbound,New product available — upgrade offer,"Dear Ajay, we are writing regarding your recent service request.",2026-02-25,Replied
+EMAIL007,CUST013,TKT0013,Outbound,New product available — upgrade offer,"Dear Sanjay, we are writing regarding your recent service request.",2026-02-23,Delivered
+EMAIL008,CUST004,TKT0020,Outbound,New product available — upgrade offer,"Dear Sneha, we are writing regarding your recent service request.",2026-05-17,Read
+EMAIL009,CUST018,TKT0024,Outbound,Thank you for your purchase,"Dear Rekha, we are writing regarding your recent service request.",2026-03-01,Read
+EMAIL010,CUST001,TKT0032,Outbound,Follow-up: Unresolved complaint,"Dear Arun, we are writing regarding your recent service request.",2026-04-06,Replied
+EMAIL011,CUST005,TKT0034,Inbound,New product available — upgrade offer,"Dear Vikram, we are writing regarding your recent service request.",2026-03-15,Replied
+EMAIL012,CUST015,TKT0038,Inbound,Annual maintenance reminder,"Dear Nikhil, we are writing regarding your recent service request.",2026-04-21,Sent
+EMAIL013,CUST009,TKT0016,Inbound,New product available — upgrade offer,"Dear Suresh, we are writing regarding your recent service request.",2026-03-05,Replied
+EMAIL014,CUST011,,Inbound,Your appliance warranty is expiring soon,"Dear Ravi, we are writing regarding your recent service request.",2026-03-21,Delivered
+EMAIL015,CUST012,TKT0022,Inbound,New product available — upgrade offer,"Dear Kavya, we are writing regarding your recent service request.",2026-02-22,Read
+EMAIL016,CUST018,,Outbound,Technician visit scheduled for tomorrow,"Dear Rekha, we are writing regarding your recent service request.",2026-04-22,Replied
+EMAIL017,CUST016,TKT0016,Inbound,Invoice for repair service,"Dear Asha, we are writing regarding your recent service request.",2026-03-26,Sent
+EMAIL018,CUST003,,Inbound,Service completed — please share your feedback,"Dear Rahul, we are writing regarding your recent service request.",2026-04-13,Read
+EMAIL019,CUST016,TKT0023,Inbound,Thank you for your purchase,"Dear Asha, we are writing regarding your recent service request.",2026-04-10,Read
+EMAIL020,CUST015,,Inbound,Service completed — please share your feedback,"Dear Nikhil, we are writing regarding your recent service request.",2026-05-07,Delivered

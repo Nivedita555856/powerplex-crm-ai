@@ -1,0 +1,850 @@
+{
+  "name": "PowerPlex CRM AI \u2014 Main Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "powerplex-query",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "03004356-0208-4825-a39c-8ec9fa7fa878",
+      "name": "Webhook \u2014 Inbound Query",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        200,
+        300
+      ],
+      "webhookId": "powerplex-query-wh"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a1",
+              "name": "query",
+              "value": "={{ $json.query || 'What are the open issues?' }}",
+              "type": "string"
+            },
+            {
+              "id": "a2",
+              "name": "customer_id",
+              "value": "={{ $json.customer_id || '' }}",
+              "type": "string"
+            },
+            {
+              "id": "a3",
+              "name": "session_id",
+              "value": "={{ $json.session_id || 'n8n-' + $now.toISO().slice(0,10) + '-' + $json.customer_id }}",
+              "type": "string"
+            },
+            {
+              "id": "a4",
+              "name": "source",
+              "value": "n8n",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1dfe1f0b-384e-4682-8585-59a573aaf6c8",
+      "name": "Prepare Query Payload",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        440,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $vars.POWERPLEX_BACKEND_URL }}/api/webhook/n8n",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "query",
+              "value": "={{ $json.query }}"
+            },
+            {
+              "name": "customer_id",
+              "value": "={{ $json.customer_id }}"
+            },
+            {
+              "name": "session_id",
+              "value": "={{ $json.session_id }}"
+            },
+            {
+              "name": "source",
+              "value": "n8n"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "2545aade-9e80-4833-9312-fa664eb99020",
+      "name": "Call PowerPlex AI",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        680,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": false,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.intent }}",
+                    "rightValue": "delay_analysis",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "delay_analysis"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": false,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.intent }}",
+                    "rightValue": "global_analysis",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "global_analysis"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": false,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.intent }}",
+                    "rightValue": "email",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "email_draft"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "id": "a4162bb2-ff00-4945-83d8-c4253d7cd803",
+      "name": "Route by Intent",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        920,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d1",
+              "name": "alert_title",
+              "value": "\u26a0\ufe0f PowerPlex Delay Analysis Alert",
+              "type": "string"
+            },
+            {
+              "id": "d2",
+              "name": "alert_body",
+              "value": "={{ $json.answer.split('DELAY_ANALYSIS_END')[0].replace('DELAY_ANALYSIS_START\\n','').replace(/CAUSE_GROUP:[A-Z|]+\\|/g,'\\n\u25b8 ').substring(0,800) }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ea7e89ef-d35d-4bf1-9277-eba1706730be",
+      "name": "Format Delay Alert",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1160,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "g1",
+              "name": "report_title",
+              "value": "\ud83d\udcca PowerPlex \u2014 Customer Issues Summary",
+              "type": "string"
+            },
+            {
+              "id": "g2",
+              "name": "report_body",
+              "value": "={{ $json.answer.split('GLOBAL_TABLE_END')[0].replace('GLOBAL_TABLE_START\\n','') }}",
+              "type": "string"
+            },
+            {
+              "id": "g3",
+              "name": "row_count",
+              "value": "={{ $json.row_count }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1fb238cb-1434-4878-9678-8f15b8c37df6",
+      "name": "Format Global Report",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1160,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e1",
+              "name": "email_subject",
+              "value": "={{ $json.answer.match(/subject:(.+)/)?.[1]?.trim() || 'CRM Email Draft' }}",
+              "type": "string"
+            },
+            {
+              "id": "e2",
+              "name": "email_to",
+              "value": "={{ $json.answer.match(/to:(.+)/)?.[1]?.trim() }}",
+              "type": "string"
+            },
+            {
+              "id": "e3",
+              "name": "email_body",
+              "value": "={{ $json.answer.split('\u2500\u2500\u2500\u2500')[1]?.trim() || $json.answer }}",
+              "type": "string"
+            },
+            {
+              "id": "e4",
+              "name": "approval_id",
+              "value": "={{ $json.answer.match(/approval:(.+)/)?.[1]?.trim() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "530c28d7-4d71-4262-ad9d-0187e4603e37",
+      "name": "Parse Email Draft",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1160,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "r1",
+              "name": "response_text",
+              "value": "={{ $json.answer }}",
+              "type": "string"
+            },
+            {
+              "id": "r2",
+              "name": "agent_used",
+              "value": "={{ $json.agent_used }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "095efa4f-d22c-4fea-8d3a-adb067eb9437",
+      "name": "Format Generic Response",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1160,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ answer: $json.answer || $json.report_body || $json.alert_body || $json.response_text, intent: $json.intent, agent_used: $json.agent_used, session_id: $json.session_id }) }}",
+        "options": {}
+      },
+      "id": "07256900-2978-4f40-962b-c1fd55eff903",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1400,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "powerplex-tickets",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "6c854838-cfdb-4a1b-8fc9-59fe74831b7e",
+      "name": "Webhook \u2014 Ticket Created",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        200,
+        700
+      ],
+      "webhookId": "powerplex-tickets-wh"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.priority }}",
+              "rightValue": "critical",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        }
+      },
+      "id": "760d51fb-f4e7-423d-9d43-a2c31aafc37f",
+      "name": "Is Critical Priority?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        440,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "t1",
+              "name": "notification_title",
+              "value": "\ud83d\udd34 CRITICAL Ticket \u2014 Immediate Action Required",
+              "type": "string"
+            },
+            {
+              "id": "t2",
+              "name": "notification_body",
+              "value": "=Ticket {{ $json.ticket_id }} created for Customer {{ $json.customer_id }}.\nIssue: {{ $json.issue }}\nPriority: {{ $json.priority }}\nStatus: {{ $json.status }}\n\nPlease assign a technician immediately.",
+              "type": "string"
+            },
+            {
+              "id": "t3",
+              "name": "slack_channel",
+              "value": "#crm-critical-alerts",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "37914f54-e199-4a90-90df-16b931ea4934",
+      "name": "Format Critical Alert",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        680,
+        620
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "n1",
+              "name": "notification_title",
+              "value": "\ud83d\udfe0 New Ticket \u2014 {{ $json.priority }} Priority",
+              "type": "string"
+            },
+            {
+              "id": "n2",
+              "name": "notification_body",
+              "value": "=Ticket {{ $json.ticket_id }} opened for {{ $json.customer_id }}.\nIssue: {{ $json.issue }}",
+              "type": "string"
+            },
+            {
+              "id": "n3",
+              "name": "slack_channel",
+              "value": "#crm-tickets",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "27daa8ee-fc21-474c-9a09-125fdb6fc68b",
+      "name": "Format Normal Ticket",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        680,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $vars.SLACK_WEBHOOK_URL }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "text",
+              "value": "={{ $json.notification_title + '\\n' + $json.notification_body }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d750e177-254a-4b5b-be91-3b4325019400",
+      "name": "Send Slack Notification",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        920,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $vars.POWERPLEX_BACKEND_URL }}/api/webhook/n8n",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "query",
+              "value": "=Who is having the most critical problems? Show me an overview of all open issues."
+            },
+            {
+              "name": "session_id",
+              "value": "=n8n-daily-{{ $now.toISO().slice(0,10) }}"
+            },
+            {
+              "name": "source",
+              "value": "n8n-scheduled"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "59155ba0-3ac3-4e05-8f0c-a332531c0dd5",
+      "name": "Fetch Daily Overview",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        440,
+        1020
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 9,
+              "field": "hours"
+            }
+          ]
+        }
+      },
+      "id": "e1f1813b-435d-4cb0-8d9d-7180f82b96f7",
+      "name": "Daily 9am Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        200,
+        1020
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $vars.POWERPLEX_BACKEND_URL }}/api/webhook/n8n",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "query",
+              "value": "Why are tickets delayed? Show knowledge graph bottleneck analysis."
+            },
+            {
+              "name": "session_id",
+              "value": "=n8n-delay-{{ $now.toISO().slice(0,10) }}"
+            },
+            {
+              "name": "source",
+              "value": "n8n-scheduled"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "ce070872-46f2-423b-b229-a1ade92415fd",
+      "name": "Fetch Delay Analysis",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        680,
+        1020
+      ]
+    },
+    {
+      "parameters": {
+        "fromEmail": "niveditakothuri0506@gmail.com",
+        "toEmail": "niveditakothuri0506@gmail.com",
+        "subject": "=\ud83d\udcca PowerPlex Daily CRM Report \u2014 {{ $now.toISO().slice(0,10) }}",
+        "emailType": "text",
+        "message": "=DAILY CRM OVERVIEW\n=====================\n{{ $('Fetch Daily Overview').item.json.answer.replace(/GLOBAL_TABLE_START.*?\\n/, '').replace('GLOBAL_TABLE_END', '') }}\n\nDELAY ANALYSIS\n=====================\n{{ $('Fetch Delay Analysis').item.json.answer.replace(/DELAY_ANALYSIS_START.*?\\n/, '').replace('DELAY_ANALYSIS_END', '') }}\n\n---\nPowered by PowerPlex CRM AI",
+        "options": {}
+      },
+      "id": "b73f3716-a875-470e-8079-01d675466ded",
+      "name": "Send Daily Report Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        920,
+        1020
+      ]
+    }
+  ],
+  "connections": {
+    "Webhook \u2014 Inbound Query": {
+      "main": [
+        [
+          {
+            "node": "Prepare Query Payload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Query Payload": {
+      "main": [
+        [
+          {
+            "node": "Call PowerPlex AI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call PowerPlex AI": {
+      "main": [
+        [
+          {
+            "node": "Route by Intent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Route by Intent": {
+      "main": [
+        [
+          {
+            "node": "Format Delay Alert",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Format Global Report",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Parse Email Draft",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Format Generic Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Delay Alert": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Global Report": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Email Draft": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Generic Response": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook \u2014 Ticket Created": {
+      "main": [
+        [
+          {
+            "node": "Is Critical Priority?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Critical Priority?": {
+      "main": [
+        [
+          {
+            "node": "Format Critical Alert",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Format Normal Ticket",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Critical Alert": {
+      "main": [
+        [
+          {
+            "node": "Send Slack Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Normal Ticket": {
+      "main": [
+        [
+          {
+            "node": "Send Slack Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Daily 9am Trigger": {
+      "main": [
+        [
+          {
+            "node": "Fetch Daily Overview",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Daily Overview": {
+      "main": [
+        [
+          {
+            "node": "Fetch Delay Analysis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Delay Analysis": {
+      "main": [
+        [
+          {
+            "node": "Send Daily Report Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": ""
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "powerplex-crm-ai"
+  },
+  "_readme": {
+    "env_vars_required": {
+      "POWERPLEX_BACKEND_URL": "Your ngrok or Render URL, e.g. https://abc123.ngrok-free.app",
+      "SLACK_WEBHOOK_URL": "Slack Incoming Webhook URL (Settings > Integrations > Incoming Webhooks)",
+      "MANAGER_EMAIL": "Email address to receive daily reports"
+    },
+    "webhook_paths": {
+      "inbound_query": "POST  <n8n-url>/webhook/powerplex-query    \u2014 send any CRM query, get AI answer back",
+      "inbound_ticket": "POST  <n8n-url>/webhook/powerplex-tickets   \u2014 PowerPlex fires this on ticket creation"
+    },
+    "flows": {
+      "Flow 1 \u2014 AI Chat Query": "Webhook \u2192 Prepare Payload \u2192 Call PowerPlex AI \u2192 Route by Intent \u2192 Respond",
+      "Flow 2 \u2014 Ticket Alert": "Ticket Webhook \u2192 Is Critical? \u2192 Format \u2192 Send Slack",
+      "Flow 3 \u2014 Daily Report": "9am Scheduler \u2192 Fetch Overview + Delay Analysis \u2192 Email Manager"
+    },
+    "how_to_import": [
+      "1. Open n8n (cloud or self-hosted)",
+      "2. Click '+ New Workflow' \u2192 '...' menu \u2192 'Import from file'",
+      "3. Select this file: n8n_workflow.json",
+      "4. Set environment variables: POWERPLEX_BACKEND_URL, SLACK_WEBHOOK_URL, MANAGER_EMAIL",
+      "5. Run ngrok: ngrok http 8000  \u2014 copy the https URL into POWERPLEX_BACKEND_URL",
+      "6. Copy each Webhook node's URL and paste into your .env: N8N_WEBHOOK_URL=<tickets webhook URL>",
+      "7. Activate the workflow"
+    ]
+  }
+}

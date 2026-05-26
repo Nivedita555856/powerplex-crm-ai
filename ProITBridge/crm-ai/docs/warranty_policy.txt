@@ -1,0 +1,45 @@
+APPLIANCE WARRANTY POLICY
+==========================
+
+1. STANDARD WARRANTY COVERAGE
+All appliances come with a manufacturer warranty:
+- Air Conditioners: 2 years (compressor: 5 years)
+- Refrigerators: 2 years (compressor: 5 years)
+- Washing Machines: 2 years (motor: 5 years)
+- Televisions: 1 year
+- Microwaves: 1 year
+- Dishwashers: 2 years
+- Water Purifiers: 1 year (membrane: 2 years)
+- Air Purifiers: 1 year
+
+2. WARRANTY CLAIM PROCESS
+Step 1: Customer raises a warranty claim via chat, email, or phone.
+Step 2: System verifies purchase date and warranty status.
+Step 3: Technician is dispatched within 24-48 hours for in-home inspection.
+Step 4: If defect is covered, repair or replacement is done free of charge.
+Step 5: If defect is not covered, customer is informed with repair cost estimate.
+
+3. WARRANTY EXCLUSIONS
+The warranty does NOT cover:
+- Physical damage (drops, cracks, dents)
+- Water damage or flooding
+- Damage from power surges (use AVR/stabilizer recommended)
+- Unauthorized repair attempts
+- Consumables (filters, bulbs, batteries)
+- Normal wear and tear
+- Damage from improper installation
+
+4. EXTENDED WARRANTY
+Customers can purchase extended warranty plans:
+- 1-year extension: ₹999–₹2,499 depending on product
+- 2-year extension: ₹1,799–₹4,999 depending on product
+Extended warranty must be purchased within 12 months of original purchase.
+
+5. WARRANTY TRANSFER
+Warranty is non-transferable and applies only to the original purchaser.
+
+6. CLAIM APPROVAL AUTHORITY
+- Claims under ₹5,000: Auto-approved by system
+- Claims ₹5,000–₹20,000: Approved by support team lead
+- Claims above ₹20,000: Requires manager approval (human-in-the-loop)
+- Refund requests: Always require human review

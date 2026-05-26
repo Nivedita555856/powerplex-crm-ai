@@ -1,0 +1,272 @@
+[
+  {
+    "chat_id": "CHAT001",
+    "customer_id": "CUST005",
+    "timestamp": "2026-03-24T22:49:00",
+    "user_message": "How do I check my warranty status?",
+    "bot_response": "You can check your warranty status by providing your serial number or purchase date. Would you like me to look it up?",
+    "intent": "service_booking",
+    "resolved": true
+  },
+  {
+    "chat_id": "CHAT002",
+    "customer_id": "CUST002",
+    "timestamp": "2026-05-11T21:49:00",
+    "user_message": "My AC is not cooling properly.",
+    "bot_response": "I'm sorry to hear that. When did you first notice the issue? Is there any unusual sound or water dripping?",
+    "intent": "escalation",
+    "resolved": false
+  },
+  {
+    "chat_id": "CHAT003",
+    "customer_id": "CUST015",
+    "timestamp": "2026-05-14T16:49:00",
+    "user_message": "I want to book a service for my refrigerator.",
+    "bot_response": "Sure! I can help you schedule a service visit. Can you share your registered phone number and the issue you're facing?",
+    "intent": "complaint",
+    "resolved": false
+  },
+  {
+    "chat_id": "CHAT004",
+    "customer_id": "CUST009",
+    "timestamp": "2026-04-19T13:49:00",
+    "user_message": "The technician didn't show up for the appointment.",
+    "bot_response": "I apologize for the inconvenience. I'm escalating this to our service team right away. You'll receive a call within 2 hours.",
+    "intent": "general_query",
+    "resolved": false
+  },
+  {
+    "chat_id": "CHAT005",
+    "customer_id": "CUST003",
+    "timestamp": "2026-04-14T05:49:00",
+    "user_message": "Is my washing machine still under warranty?",
+    "bot_response": "Let me check. Could you provide your warranty ID or the serial number of your machine?",
+    "intent": "general_query",
+    "resolved": false
+  },
+  {
+    "chat_id": "CHAT006",
+    "customer_id": "CUST020",
+    "timestamp": "2026-05-06T06:49:00",
+    "user_message": "How long will the repair take?",
+    "bot_response": "Most repairs are completed within 1\u20133 working days depending on spare part availability.",
+    "intent": "warranty_check",
+    "resolved": true
+  },
+  {
+    "chat_id": "CHAT007",
+    "customer_id": "CUST019",
+    "timestamp": "2026-04-15T06:49:00",
+    "user_message": "I'm not satisfied with the service quality.",
+    "bot_response": "I'm very sorry to hear that. Your feedback is important. I'm connecting you with our customer care team for a follow-up.",
+    "intent": "complaint",
+    "resolved": true
+  },
+  {
+    "chat_id": "CHAT008",
+    "customer_id": "CUST006",
+    "timestamp": "2026-04-21T14:49:00",
+    "user_message": "What is covered under the warranty?",
+    "bot_response": "The warranty covers manufacturing defects and component failures. It does not cover physical damage, pest damage, or power surge damage.",
+    "intent": "general_query",
+    "resolved": false
+  },
+  {
+    "chat_id": "CHAT009",
+    "customer_id": "CUST006",
+    "timestamp": "2026-04-14T17:49:00",
+    "user_message": "Can I extend my warranty?",
+    "bot_response": "Yes! We offer 1-year and 2-year extended warranty plans. Would you like me to send you the pricing details?",
+    "intent": "general_query",
+    "resolved": true
+  },
+  {
+    "chat_id": "CHAT010",
+    "customer_id": "CUST016",
+    "timestamp": "2026-04-29T17:49:00",
+    "user_message": "My TV screen is flickering after 6 months of purchase.",
+    "bot_response": "Flickering can be due to a loose HDMI connection or a display issue. Since you're within warranty, I'll raise a service ticket for you.",
+    "intent": "complaint",
+    "resolved": false
+  },
+  {
+    "chat_id": "CHAT011",
+    "customer_id": "CUST004",
+    "timestamp": "2026-03-29T01:49:00",
+    "user_message": "How do I check my warranty status?",
+    "bot_response": "You can check your warranty status by providing your serial number or purchase date. Would you like me to look it up?",
+    "intent": "complaint",
+    "resolved": false
+  },
+  {
+    "chat_id": "CHAT012",
+    "customer_id": "CUST016",
+    "timestamp": "2026-05-03T09:49:00",
+    "user_message": "My AC is not cooling properly.",
+    "bot_response": "I'm sorry to hear that. When did you first notice the issue? Is there any unusual sound or water dripping?",
+    "intent": "general_query",
+    "resolved": true
+  },
+  {
+    "chat_id": "CHAT013",
+    "customer_id": "CUST015",
+    "timestamp": "2026-05-16T20:49:00",
+    "user_message": "I want to book a service for my refrigerator.",
+    "bot_response": "Sure! I can help you schedule a service visit. Can you share your registered phone number and the issue you're facing?",
+    "intent": "complaint",
+    "resolved": false
+  },
+  {
+    "chat_id": "CHAT014",
+    "customer_id": "CUST004",
+    "timestamp": "2026-04-02T18:49:00",
+    "user_message": "The technician didn't show up for the appointment.",
+    "bot_response": "I apologize for the inconvenience. I'm escalating this to our service team right away. You'll receive a call within 2 hours.",
+    "intent": "escalation",
+    "resolved": true
+  },
+  {
+    "chat_id": "CHAT015",
+    "customer_id": "CUST018",
+    "timestamp": "2026-04-22T17:49:00",
+    "user_message": "Is my washing machine still under warranty?",
+    "bot_response": "Let me check. Could you provide your warranty ID or the serial number of your machine?",
+    "intent": "warranty_check",
+    "resolved": true
+  },
+  {
+    "chat_id": "CHAT016",
+    "customer_id": "CUST017",
+    "timestamp": "2026-04-28T11:49:00",
+    "user_message": "How long will the repair take?",
+    "bot_response": "Most repairs are completed within 1\u20133 working days depending on spare part availability.",
+    "intent": "general_query",
+    "resolved": false
+  },
+  {
+    "chat_id": "CHAT017",
+    "customer_id": "CUST002",
+    "timestamp": "2026-05-08T22:49:00",
+    "user_message": "I'm not satisfied with the service quality.",
+    "bot_response": "I'm very sorry to hear that. Your feedback is important. I'm connecting you with our customer care team for a follow-up.",
+    "intent": "escalation",
+    "resolved": true
+  },
+  {
+    "chat_id": "CHAT018",
+    "customer_id": "CUST010",
+    "timestamp": "2026-04-23T08:49:00",
+    "user_message": "What is covered under the warranty?",
+    "bot_response": "The warranty covers manufacturing defects and component failures. It does not cover physical damage, pest damage, or power surge damage.",
+    "intent": "general_query",
+    "resolved": true
+  },
+  {
+    "chat_id": "CHAT019",
+    "customer_id": "CUST001",
+    "timestamp": "2026-04-11T11:49:00",
+    "user_message": "Can I extend my warranty?",
+    "bot_response": "Yes! We offer 1-year and 2-year extended warranty plans. Would you like me to send you the pricing details?",
+    "intent": "service_booking",
+    "resolved": true
+  },
+  {
+    "chat_id": "CHAT020",
+    "customer_id": "CUST010",
+    "timestamp": "2026-04-17T06:49:00",
+    "user_message": "My TV screen is flickering after 6 months of purchase.",
+    "bot_response": "Flickering can be due to a loose HDMI connection or a display issue. Since you're within warranty, I'll raise a service ticket for you.",
+    "intent": "escalation",
+    "resolved": false
+  },
+  {
+    "chat_id": "CHAT021",
+    "customer_id": "CUST003",
+    "timestamp": "2026-05-08T03:49:00",
+    "user_message": "How do I check my warranty status?",
+    "bot_response": "You can check your warranty status by providing your serial number or purchase date. Would you like me to look it up?",
+    "intent": "general_query",
+    "resolved": true
+  },
+  {
+    "chat_id": "CHAT022",
+    "customer_id": "CUST005",
+    "timestamp": "2026-04-20T08:49:00",
+    "user_message": "My AC is not cooling properly.",
+    "bot_response": "I'm sorry to hear that. When did you first notice the issue? Is there any unusual sound or water dripping?",
+    "intent": "complaint",
+    "resolved": false
+  },
+  {
+    "chat_id": "CHAT023",
+    "customer_id": "CUST014",
+    "timestamp": "2026-03-29T15:49:00",
+    "user_message": "I want to book a service for my refrigerator.",
+    "bot_response": "Sure! I can help you schedule a service visit. Can you share your registered phone number and the issue you're facing?",
+    "intent": "general_query",
+    "resolved": true
+  },
+  {
+    "chat_id": "CHAT024",
+    "customer_id": "CUST015",
+    "timestamp": "2026-04-17T02:49:00",
+    "user_message": "The technician didn't show up for the appointment.",
+    "bot_response": "I apologize for the inconvenience. I'm escalating this to our service team right away. You'll receive a call within 2 hours.",
+    "intent": "general_query",
+    "resolved": true
+  },
+  {
+    "chat_id": "CHAT025",
+    "customer_id": "CUST020",
+    "timestamp": "2026-04-19T07:49:00",
+    "user_message": "Is my washing machine still under warranty?",
+    "bot_response": "Let me check. Could you provide your warranty ID or the serial number of your machine?",
+    "intent": "service_booking",
+    "resolved": true
+  },
+  {
+    "chat_id": "CHAT026",
+    "customer_id": "CUST009",
+    "timestamp": "2026-04-02T17:49:00",
+    "user_message": "How long will the repair take?",
+    "bot_response": "Most repairs are completed within 1\u20133 working days depending on spare part availability.",
+    "intent": "complaint",
+    "resolved": false
+  },
+  {
+    "chat_id": "CHAT027",
+    "customer_id": "CUST001",
+    "timestamp": "2026-05-03T07:49:00",
+    "user_message": "I'm not satisfied with the service quality.",
+    "bot_response": "I'm very sorry to hear that. Your feedback is important. I'm connecting you with our customer care team for a follow-up.",
+    "intent": "complaint",
+    "resolved": false
+  },
+  {
+    "chat_id": "CHAT028",
+    "customer_id": "CUST005",
+    "timestamp": "2026-04-23T13:49:00",
+    "user_message": "What is covered under the warranty?",
+    "bot_response": "The warranty covers manufacturing defects and component failures. It does not cover physical damage, pest damage, or power surge damage.",
+    "intent": "general_query",
+    "resolved": false
+  },
+  {
+    "chat_id": "CHAT029",
+    "customer_id": "CUST011",
+    "timestamp": "2026-04-16T13:49:00",
+    "user_message": "Can I extend my warranty?",
+    "bot_response": "Yes! We offer 1-year and 2-year extended warranty plans. Would you like me to send you the pricing details?",
+    "intent": "general_query",
+    "resolved": false
+  },
+  {
+    "chat_id": "CHAT030",
+    "customer_id": "CUST011",
+    "timestamp": "2026-03-28T00:49:00",
+    "user_message": "My TV screen is flickering after 6 months of purchase.",
+    "bot_response": "Flickering can be due to a loose HDMI connection or a display issue. Since you're within warranty, I'll raise a service ticket for you.",
+    "intent": "service_booking",
+    "resolved": false
+  }
+]

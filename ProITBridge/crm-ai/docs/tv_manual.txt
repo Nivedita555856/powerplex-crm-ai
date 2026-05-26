@@ -1,0 +1,114 @@
+=============================================================
+VISIONX SMART TV — OWNER'S MANUAL
+Models: VX-43S, VX-55S, VX-65S (4K Smart TV Series)
+=============================================================
+
+SECTION 1: PRODUCT OVERVIEW
+-----------------------------
+VisionX Smart TVs feature 4K UHD displays with built-in streaming and AI picture enhancement.
+Screen Size: 43", 55", 65"
+Resolution: 4K Ultra HD (3840 × 2160)
+Panel: VA Panel (VX-43S), QLED (VX-55S, VX-65S)
+OS: Android TV 13
+HDR: HDR10, HLG support (VX-55S/65S: Dolby Vision + HDR10+)
+Audio: 20W (VX-43S), 30W (VX-55S), 40W (VX-65S) with Dolby Atmos
+Refresh Rate: 60Hz (VX-43S), 120Hz (VX-55S, VX-65S)
+
+SECTION 2: CONNECTIONS
+------------------------
+HDMI Ports: 3x HDMI 2.0 (1x ARC)
+USB: 2x USB 2.0 + 1x USB 3.0
+Audio Out: Optical (SPDIF), 3.5mm headphone jack
+LAN: Ethernet RJ-45
+WiFi: Dual-band 2.4GHz / 5GHz, WiFi 5
+Bluetooth: 5.0
+
+SECTION 3: INITIAL SETUP
+--------------------------
+1. Unbox and attach stand (or wall mount). See separate stand assembly guide.
+2. Connect power cable. Do NOT switch on yet.
+3. Connect antenna/cable/HDTV cable to RF IN port.
+4. Power on. Follow on-screen setup wizard.
+5. Select language → connect to WiFi → sign in with Google account.
+6. Android TV home screen will appear.
+7. Download desired streaming apps from Google Play Store.
+
+SECTION 4: PICTURE SETTINGS
+------------------------------
+Vivid: High brightness for daylight viewing
+Standard: Balanced for general use (recommended)
+Cinema: Accurate colors for movies in dark room
+Sports: High motion clarity for live sports
+Game Mode: Low latency (<10ms input lag) for gaming
+Custom: Set your own Brightness, Contrast, Color, Sharpness, Backlight
+
+SECTION 5: SMART TV FEATURES
+------------------------------
+Android TV: Access 500,000+ apps via Google Play
+Chromecast Built-in: Cast directly from phone/tablet/PC
+Google Assistant: Press mic button on remote; voice search and control
+AirPlay (VX-55S / VX-65S): Mirror from Apple devices
+Multi-view: Watch 2 sources simultaneously (VX-65S)
+Screen Mirror: Mirror Android phone screen wirelessly
+
+SECTION 6: REMOTE CONTROL
+----------------------------
+Home: Go to Android TV home screen
+Back: Return to previous screen
+Settings (gear icon): Quick settings panel
+Google Assistant (mic): Voice commands
+Volume +/-: Adjust volume
+Channel +/-: Change channel
+Input: Select input source
+Netflix/Amazon/YouTube: Direct launch buttons
+Power: Standby/wake
+
+SECTION 7: CONNECTIVITY TROUBLESHOOTING
+-----------------------------------------
+WiFi not connecting:
+  - Ensure TV is within range of router
+  - Forget network and reconnect
+  - Check router frequency (use 5GHz for faster speeds)
+
+No picture on HDMI:
+  - Check HDMI cable connection on both ends
+  - Try different HDMI port
+  - Check source device is outputting signal
+  - Ensure HDMI cable supports 4K (High Speed HDMI)
+
+Bluetooth pairing:
+  - Go to Settings > Remote & Accessories > Add Accessory
+  - Put device in pairing mode
+  - Select from list
+
+SECTION 8: ERROR CODES / INDICATORS
+--------------------------------------
+Red LED blinking (2x): Power supply issue → Unplug 30 sec, reconnect
+Red LED blinking (4x): Panel backlight fault → Service required
+Red LED blinking (6x): Main board fault → Service required
+No signal: Check antenna/cable connection and input source
+App not loading: Clear app cache in Settings > Apps > [App] > Clear Cache
+
+SECTION 9: MAINTENANCE
+------------------------
+- Clean screen with microfiber cloth (dry or slightly damp with distilled water)
+- Do NOT use glass cleaner, alcohol, or abrasive materials on screen
+- Dust vents at back monthly with soft brush
+- Update software: Settings > Device Preferences > About > System Update
+- Factory reset: Settings > Device Preferences > Reset (last resort)
+
+SECTION 10: GAMING MODE
+-------------------------
+Enable: Settings > Picture > Game Mode
+- Input lag reduced to <10ms
+- VRR (Variable Refresh Rate) enabled (for compatible consoles)
+- ALLM (Auto Low Latency Mode) automatically activates when console detected
+- Best HDMI port for gaming: HDMI 1 (supports 120Hz on VX-55S/65S)
+
+SECTION 11: WARRANTY
+----------------------
+Panel: 1 year from purchase
+Electronics: 1 year from purchase
+Exclusions: Screen burn-in from static images, physical damage, power surge, unauthorized modifications
+Panel repair cost after warranty: ₹8,000–₹25,000 depending on model
+Home service within warranty: Within 48 hours of complaint

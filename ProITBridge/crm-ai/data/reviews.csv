@@ -1,0 +1,21 @@
+review_id,customer_id,ticket_id,rating,review_text,review_date,sentiment,category
+REV001,CUST011,TKT0013,3,"Decent service, nothing exceptional. Issue resolved.",2026-03-23,Neutral,Technician Quality
+REV002,CUST007,TKT0022,2,Disappointing experience. Had to reschedule twice.,2026-05-05,Negative,Issue Resolution
+REV003,CUST004,TKT0022,5,Very happy with the service. Would recommend to others.,2026-05-08,Positive,Issue Resolution
+REV004,CUST006,TKT0026,5,Excellent service! Technician was very professional and fixed the issue quickly.,2026-04-07,Positive,Technician Quality
+REV005,CUST009,TKT0008,5,Excellent service! Technician was very professional and fixed the issue quickly.,2026-04-17,Positive,Issue Resolution
+REV006,CUST005,TKT0040,4,Good experience overall. Took a bit longer than expected but resolved.,2026-03-28,Positive,Service Speed
+REV007,CUST019,TKT0026,2,Disappointing experience. Had to reschedule twice.,2026-04-22,Negative,Communication
+REV008,CUST011,TKT0015,5,Excellent service! Technician was very professional and fixed the issue quickly.,2026-05-06,Positive,Communication
+REV009,CUST004,TKT0012,5,Outstanding! Fixed within 2 hours of complaint. Highly satisfied.,2026-04-21,Positive,Service Speed
+REV010,CUST019,TKT0008,3,Average service. Technician was late but issue was fixed.,2026-05-13,Neutral,Issue Resolution
+REV011,CUST003,TKT0024,4,Good experience overall. Took a bit longer than expected but resolved.,2026-04-17,Positive,Communication
+REV012,CUST020,TKT0024,3,"Decent service, nothing exceptional. Issue resolved.",2026-04-28,Neutral,Communication
+REV013,CUST015,TKT0026,5,Superb! Technician explained the issue clearly and fixed it on first visit.,2026-04-25,Positive,Issue Resolution
+REV014,CUST019,TKT0008,5,Superb! Technician explained the issue clearly and fixed it on first visit.,2026-04-05,Positive,Service Speed
+REV015,CUST007,TKT0022,5,Very happy with the service. Would recommend to others.,2026-04-10,Positive,Service Speed
+REV016,CUST006,TKT0024,3,Average service. Technician was late but issue was fixed.,2026-04-17,Neutral,Service Speed
+REV017,CUST006,TKT0002,5,Outstanding! Fixed within 2 hours of complaint. Highly satisfied.,2026-04-24,Positive,Communication
+REV018,CUST010,TKT0008,2,Poor response time. Had to call multiple times to get a technician.,2026-05-04,Negative,Issue Resolution
+REV019,CUST015,TKT0012,2,Poor response time. Had to call multiple times to get a technician.,2026-03-24,Negative,Issue Resolution
+REV020,CUST019,TKT0022,5,Outstanding! Fixed within 2 hours of complaint. Highly satisfied.,2026-05-15,Positive,Technician Quality

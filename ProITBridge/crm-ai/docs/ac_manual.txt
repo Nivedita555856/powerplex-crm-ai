@@ -1,0 +1,105 @@
+=============================================================
+COOLBREEZE AIR CONDITIONER — OWNER'S MANUAL
+Models: CB-1.5T, CB-2T, CB-2.5T (Split AC Series)
+=============================================================
+
+SECTION 1: PRODUCT OVERVIEW
+-----------------------------
+CoolBreeze Split Air Conditioners deliver energy-efficient cooling with inverter technology.
+Capacity options: 1.5 Ton, 2 Ton, 2.5 Ton
+Energy Rating: 5-Star BEE rated
+Refrigerant: R-32 (eco-friendly, low GWP)
+Compressor: Variable-speed inverter compressor
+Warranty: 1 year comprehensive + 5 years compressor
+
+SECTION 2: INSTALLATION REQUIREMENTS
+--------------------------------------
+- Outdoor unit: Min 30 cm clearance on all sides; avoid direct sunlight
+- Indoor unit: Mount 7–8 feet high; avoid heat sources nearby
+- Copper pipe length: Max 15 meters between units
+- Electrical: Dedicated 15A/20A circuit; stabilizer recommended in areas with voltage fluctuation
+- Drainage: 15-degree downward slope for drain pipe; min 1.5-inch diameter
+
+SECTION 3: OPERATING MODES
+----------------------------
+COOL Mode: Standard cooling. Set temperature 16°C–30°C.
+FAN Mode: Air circulation only, no cooling.
+DRY Mode: Dehumidification. Reduces humidity without aggressive cooling.
+AUTO Mode: Automatically switches between cool/heat based on room temp.
+HEAT Mode (CB-2T, CB-2.5T only): Heating in winter. Works up to -7°C ambient.
+SLEEP Mode: Gradually raises temp by 1°C/hr for comfort sleeping.
+TURBO Mode: Maximum cooling for first 30 minutes.
+
+SECTION 4: REMOTE CONTROL GUIDE
+----------------------------------
+Power: ON/OFF button
+Mode: Cycle through Cool/Dry/Fan/Auto/Heat
+Fan Speed: Auto / Low / Medium / High
+Timer: Set ON/OFF timer (1–24 hours)
+Swing: Horizontal and vertical louver control
+Eco: Energy-saving mode (maintains 26°C)
+WiFi: Enable smart control via CoolBreeze app
+
+SECTION 5: SMART FEATURES (WiFi Models)
+-----------------------------------------
+- CoolBreeze App (Android/iOS): Remote on/off, scheduling, energy monitoring
+- Voice Control: Compatible with Amazon Alexa, Google Home
+- Energy Report: Weekly consumption report via app
+- Geo-fencing: Auto on/off based on your location
+
+SECTION 6: MAINTENANCE SCHEDULE
+----------------------------------
+Every 2 weeks:
+  - Clean/rinse the air filter (front panel)
+  - Wipe indoor unit with dry cloth
+
+Every 3 months:
+  - Deep clean evaporator coil (call service)
+  - Check drain pipe for blockage
+  - Check remote battery
+
+Every 6 months (Annual Service):
+  - Full service: gas pressure check, coil cleaning, drainage flush
+  - Professional cleaning recommended before summer season
+  - Check electrical connections and capacitors
+
+SECTION 7: FILTER CLEANING STEPS
+-----------------------------------
+1. Switch off AC and unplug from power.
+2. Lift the front panel cover upward.
+3. Slide out the mesh filters (left and right).
+4. Wash under running water; use mild soap if greasy.
+5. Dry completely in shade (do NOT use direct sunlight/dryer).
+6. Reinsert filters; press front panel closed.
+7. Reset filter-clean indicator: hold "Auto" button 3 seconds.
+
+SECTION 8: ERROR CODES
+------------------------
+E1  — Indoor room sensor fault → Replace thermistor
+E2  — Evaporator coil sensor fault → Service required
+E3  — High pressure protection → Check refrigerant, clean filter
+E4  — Low pressure / gas leak → Gas top-up required (certified technician)
+E5  — Compressor overload → Check voltage; rest unit 30 minutes
+E6  — Communication error (indoor↔outdoor) → Check wiring
+E7  — Outdoor ambient sensor fault → Service required
+F1  — Refrigerant leak detected → Evacuate and call service immediately
+H1  — Defrost mode active (normal in heat mode)
+P1  — Power fluctuation protection → Check power supply
+
+SECTION 9: ENERGY SAVING TIPS
+--------------------------------
+- Set temperature to 24°C–26°C for optimal efficiency
+- Use timer to avoid running AC when not needed
+- Close windows and doors while AC is running
+- Clean filters every 2 weeks
+- Use ceiling fan alongside AC to spread cooling
+- Draw curtains/blinds during peak afternoon heat
+
+SECTION 10: WARRANTY TERMS
+-----------------------------
+Comprehensive: 1 year from purchase date
+Compressor: 5 years from purchase date
+PCB/Electronics: 1 year
+Refrigerant gas top-up: Not covered after 1 year
+Exclusions: Physical damage, pest damage, improper installation, voltage surge damage
+Service charges after warranty: ₹500–₹1,500 per visit depending on work
