@@ -553,3 +553,8 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--tex
   background: #fef9c3;
   color: #854d0e;
 }
+
+.typing-bubble { display: flex; align-items: center; gap: 4px; padding: 6px 4px; }
+.typing-bubble .dot { display: inline-block; width: 7px; height: 7px; background: var(--primary); border-radius: 50%; animation: bounce .9s infinite; }
+.typing-bubble .dot:nth-child(2) { animation-delay: .2s; }
+.typing-bubble .dot:nth-child(3) { animation-delay: .4s; }

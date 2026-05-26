@@ -648,6 +648,24 @@ function handleChatKey(e) {
   if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendMessage(); }
 }
 
+
+function appendTyping() {
+  const el  = document.getElementById("chatMessages");
+  const div = document.createElement("div");
+  const id  = "typing_" + Date.now();
+  div.id = id;
+  div.className = "msg bot";
+  div.innerHTML = '<div class="msg-bubble typing-bubble"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>';
+  el.appendChild(div);
+  el.scrollTop = el.scrollHeight;
+  return id;
+}
+
+function removeTyping(id) {
+  const el = document.getElementById(id);
+  if (el) el.remove();
+}
+
 async function sendMessage() {
   const ta    = document.getElementById("chatInput");
   const query = ta.value.trim();
