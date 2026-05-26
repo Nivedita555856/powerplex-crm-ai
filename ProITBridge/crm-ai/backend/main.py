@@ -14,7 +14,12 @@ app = FastAPI(title="Appliance CRM AI", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], allow_methods=["*"], allow_headers=["*"],
+    allow_origins=["*"],
+    allow_origin_regex=r"https://.*\.vercel\.app",
+    allow_methods=["GET","POST","PUT","DELETE","OPTIONS","PATCH"],
+    allow_headers=["*"],
+    allow_credentials=False,
+    max_age=600,
 )
 
 FRONTEND_DIR = os.path.join(os.path.dirname(__file__), "..", "frontend")
