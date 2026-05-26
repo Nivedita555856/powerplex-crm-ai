@@ -14,6 +14,13 @@ INTENT_RULES = [
     ("policy_query",
      r"how many days|days.*return|return.*within|days.*to return|return.*days|void.*warrant|warrant.*void|warrant.*condition|condition.*warrant|standard.*repair|repair.*turnaround|turnaround.*time|repair.*time.*polic"),
 
+    # early-catch: list/show queries that should be pure data lookups — must come BEFORE global_analysis
+    ("data_query",
+     r"list all customer.*name|list all customer.*id|customer.*name.*and.*id|"
+     r"list all customers who|list all customers that|customers who have|customers who own|"
+     r"show.*all tickets.*last|tickets.*raised.*last|tickets.*in the last|"
+     r"last \d+ days|past \d+ days|show all customer"),
+
     # ── delay / knowledge-graph analysis (highest specificity) ──────────────
     ("delay_analysis",
      r"why.*delay|delay.*reason|why.*pending|why.*not.*resolved|why.*stuck|"
@@ -44,7 +51,14 @@ INTENT_RULES = [
      r"how many|total number|give me all|show all|list all|count of|"
      r"all appliance|all customer|appliance name|appliance type|appliance list|"
      r"customer list|lead list|technician list|show technician|"
-     r"customers.*from|from.*city|how many.*city|city.*customer"),
+     r"customers.*from|from.*city|how many.*city|city.*customer|"
+     r"customer.*name.*id|list.*customer.*name|all customer.*id|"
+     r"customers.*have.*|customers.*own|who.*own.*appliance|have.*refrigerator|"
+     r"have.*washing|have.*microwave|have.*television|have.*\bac\b|"
+     r"last.*days|past.*days|raised.*last|tickets.*last|recent.*ticket|"
+     r"multiple.*issue|multiple.*ticket|active.*issue|active.*technician|"
+     r"technician.*active|currently.*active.*tech|high.*priority.*ticket|"
+     r"low.*priority.*ticket|critical.*ticket.*open|open.*critical"),
 
     ("warranty",       r"my warranty|check warranty|warranty status|warranty.*expire|coverage check|warranty active|warranty claim|is.*under warranty|warranty.*on|warranty.*for|what.*warranty|tell.*warranty|show.*warranty|warranty.*left|warranty.*valid|warranty.*cover"),
     ("recommendation", r"recommend|suggest|best product|which appliance|buy|upgrade|looking for"),
@@ -237,7 +251,114 @@ def _handle_data_query(query: str, customer_id: Optional[str], session_id: str =
         if matching_appl:
             return f"Customers who bought {bought_match.group(1).strip()}: {len(buyers)}"
 
-    if re.search(r"appliance|product|refrigerator|fridge|ac|washing machine|microwave|television|tv|coolbreeze|frostking|washpro|microchef|visionx", q):
+    # ── Customers who have/own a specific appliance ───────────────────────────
+    have_match = re.search(r"customers?.*(have|own|with|registered|using)\s+(?:a\s+)?([\w\s]+?)(?:\?|$|\.|in the)", q)
+    if have_match and re.search(r"customer", q):
+        cat_q = have_match.group(2).strip().lower()
+        # Skip if matched text is about issues/tickets, not appliances
+        if re.search(r"issue|ticket|problem|complaint|multiple|active|open", cat_q):
+            have_match = None
+    if have_match and re.search(r"customer", q):
+        cat_q = have_match.group(2).strip().lower()
+        appliance_cats = {"refrigerator":"Refrigerator","fridge":"Refrigerator",
+                          "ac":"Air Conditioner","air conditioner":"Air Conditioner",
+                          "washing machine":"Washing Machine","washer":"Washing Machine",
+                          "microwave":"Microwave","tv":"TV","television":"TV"}
+        matched_cat = None
+        for kw, cat in appliance_cats.items():
+            if kw in cat_q:
+                matched_cat = cat
+                break
+        if matched_cat:
+            from backend.data_loader import get_warranty_data
+            appliances = get_appliances()
+            warranties = get_warranty_data()
+            customers  = get_customers()
+            cat_appls  = {a["appliance_id"] for a in appliances if a.get("category","") == matched_cat}
+            cust_ids   = {w["customer_id"] for w in warranties if w["appliance_id"] in cat_appls}
+            cust_map   = {c["customer_id"]: c for c in customers}
+            lines = [f"Customers with a {matched_cat}: {len(cust_ids)}\n"]
+            for cid in sorted(cust_ids):
+                c = cust_map.get(cid, {})
+                lines.append(f"  {cid} | {c.get('name',cid)} | {c.get('segment','')} | {c.get('city','')}")
+            return "\n".join(lines)
+
+    # ── List all customer names and IDs ───────────────────────────────────────
+    if re.search(r"customer.*name.*id|list.*customer.*name|all customer.*id|customer.*id.*name", q):
+        customers = get_customers()
+        lines = [f"All {len(customers)} customers:\n"]
+        for c in customers:
+            lines.append(f"  {c['customer_id']} | {c['name']} | {c.get('segment','')} | {c.get('city','')}")
+        return "\n".join(lines)
+
+    # ── Customers with multiple active issues ─────────────────────────────────
+    if re.search(r"multiple.*issue|multiple.*ticket|more than one.*ticket|several.*issue|active.*issue", q):
+        from backend.data_loader import get_tickets
+        all_tickets = get_tickets()
+        open_statuses = {"OPEN","IN_PROGRESS","UNDER_REVIEW","TECHNICIAN_PENDING","ASSIGNED"}
+        cust_open = {}
+        for t in all_tickets:
+            if t.get("status","") in open_statuses:
+                cid = t["customer_id"]
+                cust_open[cid] = cust_open.get(cid, 0) + 1
+        multi = {cid: cnt for cid, cnt in cust_open.items() if cnt > 1}
+        customers = {c["customer_id"]: c for c in get_customers()}
+        lines = [f"Customers with multiple active issues: {len(multi)}\n"]
+        for cid, cnt in sorted(multi.items(), key=lambda x: -x[1]):
+            c = customers.get(cid, {})
+            lines.append(f"  {cid} | {c.get('name', cid)} | {cnt} open tickets | {c.get('segment','')} | {c.get('city','')}")
+        if not multi:
+            lines = ["No customers currently have more than one active/open ticket."]
+        return "\n".join(lines)
+
+    # ── Active technicians ────────────────────────────────────────────────────
+    if re.search(r"active.*technician|technician.*active|currently.*active|how many.*tech", q):
+        techs = get_technicians()
+        active = [t for t in techs if str(t.get("available","")).lower() in ("true","yes","1","available")]
+        lines = [f"Active/Available technicians: {len(active)} of {len(techs)} total\n"]
+        for t in active:
+            lines.append(f"  {t['name']} | {t.get('specialization','')} | {t.get('city','')} | Rating: {t.get('rating','')}")
+        if not active:
+            lines = [f"All {len(techs)} technicians (no availability data):\n"]
+            for t in techs:
+                lines.append(f"  {t['name']} | {t.get('specialization','')} | {t.get('city','')} | Rating: {t.get('rating','')}")
+        return "\n".join(lines)
+
+    # ── Tickets in last N days ────────────────────────────────────────────────
+    days_match = re.search(r"last\s+(\d+)\s+days?|past\s+(\d+)\s+days?|recent\s+(\d+)\s+days?", q)
+    if days_match and re.search(r"ticket|issue|complaint", q):
+        from backend.data_loader import get_tickets
+        import datetime
+        n_days = int(next(g for g in days_match.groups() if g))
+        cutoff = (datetime.datetime.now() - datetime.timedelta(days=n_days)).strftime("%Y-%m-%d")
+        all_t  = get_tickets()
+        recent = [t for t in all_t if t.get("created_at","") >= cutoff]
+        if not recent:
+            recent = all_t  # fallback: return all if no date field
+            note = " (no date filter — showing all tickets)"
+        else:
+            note = ""
+        lines = [f"Tickets in the last {n_days} days{note}: {len(recent)}\n"]
+        for t in sorted(recent, key=lambda x: x.get("created_at",""), reverse=True)[:15]:
+            lines.append(f"  [{t.get('priority','?').upper():8}] {t['ticket_id']} | {t['customer_id']} | {t['issue'][:50]} | {t.get('status','')} | {t.get('created_at','')}")
+        return "\n".join(lines)
+
+    # ── High/low/critical priority open tickets ───────────────────────────────
+    pri_match = re.search(r"(critical|high|medium|low)\s*[\-\s]*priority", q)
+    if pri_match and re.search(r"ticket|issue", q):
+        from backend.data_loader import get_tickets
+        pri = pri_match.group(1).lower()
+        all_t  = get_tickets()
+        open_s = {"OPEN","IN_PROGRESS","UNDER_REVIEW","TECHNICIAN_PENDING","ASSIGNED"}
+        matched = [t for t in all_t if t.get("priority","").lower() == pri
+                   and (t.get("status","") in open_s if re.search(r"open|active|unresolved", q) else True)]
+        customers = {c["customer_id"]: c["name"] for c in get_customers()}
+        lines = [f"{pri.capitalize()}-priority {'open ' if re.search(r'open|active', q) else ''}tickets: {len(matched)}\n"]
+        for t in matched[:15]:
+            lines.append(f"  {t['ticket_id']} | {customers.get(t['customer_id'], t['customer_id'])} | {t['issue'][:55]} | {t.get('status','')}")
+        return "\n".join(lines)
+
+    if re.search(r"appliance|product|refrigerator|fridge|\bac\b|washing machine|microwave|television|\btv\b|coolbreeze|frostking|washpro|microchef|visionx", q):
         appliances = get_appliances()
         by_cat = {}
         for a in appliances:
@@ -434,7 +555,7 @@ def _handle_customer_lookup(query: str, customer_id: Optional[str], session_id: 
     if _get_client():
         llm_ans = call_llm(
             "You are a CRM assistant. Give a concise, natural-language summary of this customer profile. "
-            "Include their name, key appliances, open issues, and warranty status. Under 150 words.",
+"Include their name, key appliances, open issues, and warranty status. Under 150 words.",
             f"Query: {query}\n\nProfile data:\n{base_answer}",
             session_id, 250
         )
@@ -499,7 +620,7 @@ def _handle_delay_analysis(query: str, session_id: str) -> Dict:
     if _get_client():
         system = (
             "You are a CRM operations analyst. Given delay data, explain in 3 sentences "
-            "the systemic root causes and the single most important fix to make right now."
+"the systemic root causes and the single most important fix to make right now."
         )
         table_snippet = "\n".join(
             f"{r['root_cause']}: {r['name']} — {r['issue'][:40]} ({r['days_open']}d)"
@@ -537,7 +658,7 @@ def _handle_email_draft(query: str, customer_id: Optional[str], session_id: str)
     if not customer_id:
         return {"answer": (
             "To draft an email I need a customer selected.\n"
-            "Pick one from the sidebar or mention their name — e.g.\n"
+"Pick one from the sidebar or mention their name — e.g.\n"
             '"Draft an apology email for Arun Kumar"'
         )}
 
@@ -756,14 +877,14 @@ def run(query: str, session_id: str, customer_id: Optional[str] = None,
             if _get_client():
                 system = (
                     "You are a PowerPlex customer support specialist with access to all "
-                    "company policy documents, product manuals, FAQs, and guidelines. "
-                    "Answer ONLY from the provided documents. Quote specific clauses, "
-                    "time limits, and conditions where they exist. "
-                    "If a specific number of days, cost, or condition is stated in the "
-                    "docs include it verbatim. Be direct: lead with the answer. "
-                    "For warranty void conditions, escalation, incorrect repairs, "
-                    "second visits answer from faq.txt or warranty_policy.txt. "
-                    "Personalise to the customer if context is provided."
+"company policy documents, product manuals, FAQs, and guidelines. "
+"Answer ONLY from the provided documents. Quote specific clauses, "
+"time limits, and conditions where they exist. "
+"If a specific number of days, cost, or condition is stated in the "
+"docs include it verbatim. Be direct: lead with the answer. "
+"For warranty void conditions, escalation, incorrect repairs, "
+"second visits answer from faq.txt or warranty_policy.txt. "
+"Personalise to the customer if context is provided."
                 )
                 ctx_prefix = ("Customer context: " + customer_info + "\n\n") if customer_info else ""
                 user = (
@@ -833,8 +954,8 @@ def run(query: str, session_id: str, customer_id: Optional[str] = None,
             if _get_client():
                 system = (
                     "You are PowerPlex CRM assistant. Help support agents answer questions "
-                    "about customers, appliances, policies and tickets. "
-                    "Be helpful, specific and concise."
+"about customers, appliances, policies and tickets. "
+"Be helpful, specific and concise."
                 )
                 user = (full_ctx + "\n\n" if full_ctx else "") + "Question: " + query
                 answer = call_llm(system, user, session_id, max_tokens=400)
